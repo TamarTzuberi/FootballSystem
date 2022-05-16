@@ -19,34 +19,7 @@ public class DateAccessController {
     }
 
     public static void main(String[] args) throws UnknownHostException {
-//        insertTeamToDB("Team", "macabiTelAviv, ");
-//        mongoClient = new MongoClient(new MongoClientURI("mongodb://localhost:27017"));
-//        database = mongoClient.getDB("FootballSystem");
-//        test = database.getCollection("test");
-//        Fan f = new Fan();
-//        f.setName("bob");
-//        f.setAge(22);
-//        test.insert(convert(f));
-//        DBObject q = new BasicDBObject("Fan Name","bob");
-//        DBCursor c = test.find(q);
-//        System.out.println(c.one());
 
-
-
-//        insertDB("test");
-//        DBCursor c = getObject("test","_id","2");
-//        System.out.println(c.one());
-//        DBObject theObj = c.next();
-//        BasicDBList checkL = (BasicDBList) theObj.get("key");
-//        System.out.println(checkL);
-//          ArrayList<String> p = new ArrayList<>();
-//          p.add("danP");
-//          p.add("itay");
-////
-//          insertTeamToDB("t1","1","team1",p,p,p,null);
-//
-
-//        System.out.println("this is player" + (getById("test","253333")));
 
     }
 
@@ -55,7 +28,7 @@ public class DateAccessController {
     }
 
 
-    public static DBCollection getDBCollection (String collectionName)
+    public DBCollection getDBCollection (String collectionName)
     {
         try{
             DBCollection dbCollection =  database.getCollection(collectionName);
@@ -67,7 +40,7 @@ public class DateAccessController {
         }
     }
 
-    public static String getById(String collectionName, String id)
+    public String getById(String collectionName, String id)
     {
         try {
             DBCollection dbCollection = (DBCollection) getDBCollection(collectionName);
@@ -83,7 +56,7 @@ public class DateAccessController {
         }
     }
 
-    public static void insertPlayerToDB(String collectionName , String id , String name, String userName, String password, String email, String teamID )
+    public void insertPlayerToDB(String collectionName , String id , String name, String userName, String password, String email, String teamID )
     {
         DBObject dbObject = new BasicDBObject();
         dbObject.put("_id", id);
@@ -95,7 +68,7 @@ public class DateAccessController {
         getDBCollection(collectionName).insert(dbObject);
     }
 
-    public static void insertTeamToDB(String collectionName , String id , String name, ArrayList<String> players, ArrayList<String>coaches, ArrayList<String>teamOwners, ArrayList<Date>datesOfGames)
+    public void insertTeamToDB(String collectionName , String id , String name, ArrayList<String> players, ArrayList<String>coaches, ArrayList<String>teamOwners, ArrayList<Date>datesOfGames)
     {
         DBObject dbObject = new BasicDBObject();
         dbObject.put("_id", id);
@@ -107,7 +80,7 @@ public class DateAccessController {
         getDBCollection(collectionName).insert(dbObject);
     }
 
-    public static void insertGameToDB(String collectionName , String id , String time, String hostTeamId, String guestTeamId, String field)
+    public void insertGameToDB(String collectionName , String id , String time, String hostTeamId, String guestTeamId, String field)
     {
         DBObject dbObject = new BasicDBObject();
         dbObject.put("_id", id);
@@ -118,7 +91,7 @@ public class DateAccessController {
         getDBCollection(collectionName).insert(dbObject);
     }
 
-    public static void insertSeasonToDB(String collectionName , String id , Date startDate, Date endDate, ArrayList<String> LeaguesInSeason)
+    public void insertSeasonToDB(String collectionName , String id , Date startDate, Date endDate, ArrayList<String> LeaguesInSeason)
     {
         DBObject dbObject = new BasicDBObject();
         dbObject.put("_id", id);
@@ -127,7 +100,7 @@ public class DateAccessController {
         dbObject.put("LeaguesInSeason", LeaguesInSeason);
         getDBCollection(collectionName).insert(dbObject);
     }
-    public static void insertLeagueToDB(String collectionName , String id , String name, ArrayList<String> teams, ArrayList<String> leagues)
+    public void insertLeagueToDB(String collectionName , String id , String name, ArrayList<String> teams, ArrayList<String> leagues)
     {
         DBObject dbObject = new BasicDBObject();
         dbObject.put("_id", id);
@@ -137,7 +110,7 @@ public class DateAccessController {
         getDBCollection(collectionName).insert(dbObject);
     }
 
-    public static boolean checkIfIDExistsInDB(String collectionName,String id)
+    public boolean checkIfIDExistsInDB(String collectionName,String id)
     {
         try{
             getById(collectionName,id);
@@ -149,7 +122,7 @@ public class DateAccessController {
         }
     }
 
-    public static boolean checkIfUserNameExists(String userName)
+    public boolean checkIfUserNameExists(String userName)
     {
         try {
             DBCollection dbCollection = (DBCollection) getDBCollection("User");
