@@ -1,6 +1,5 @@
 package Domain;
 
-import DataAccess.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -10,7 +9,7 @@ public class DomainController {
 
     private static User connectedUser;
     private static DomainController DC;
-//    private static DataAccessController DAC;
+    private static DataAccess.DateAccessController DAC;
 
     private DomainController(String username, String password)
     {
@@ -41,7 +40,9 @@ public class DomainController {
 
     public void login(String username, String password)
     {
+
         //check if username exist in DB
+        boolean userExists = DAC.checkIfUserNameExists(username);
         //check if password correct
         //connected user
     }

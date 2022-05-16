@@ -39,11 +39,13 @@ public class DateAccessController {
 //        DBObject theObj = c.next();
 //        BasicDBList checkL = (BasicDBList) theObj.get("key");
 //        System.out.println(checkL);
-//        ArrayList<String> p = new ArrayList<>();
-//        p.add("danP");
-//        p.add("itay");
+//          ArrayList<String> p = new ArrayList<>();
+//          p.add("danP");
+//          p.add("itay");
+////
+//          insertTeamToDB("t1","1","team1",p,p,p,null);
 //
-////        inserTeamToDB("test","253333","t1",p,p,p,null);
+
 //        System.out.println("this is player" + (getById("test","253333")));
 
     }
@@ -67,13 +69,18 @@ public class DateAccessController {
 
     public static String getById(String collectionName, String id)
     {
-        DBCollection dbCollection = (DBCollection) getDBCollection(collectionName);
-        DBObject q = new BasicDBObject("_id",id);
-        DBCursor c = dbCollection.find(q);
-        DBObject theObj = c.next();
-        String result = theObj.toString();
-
-        return result;
+        try {
+            DBCollection dbCollection = (DBCollection) getDBCollection(collectionName);
+            DBObject q = new BasicDBObject("_id", id);
+            DBCursor c = dbCollection.find(q);
+            DBObject theObj = c.next();
+            String result = theObj.toString();
+            return result;
+        }
+        catch (Exception e)
+        {
+            throw new RuntimeException("id does not exists in DB",e);
+        }
     }
 
     public static void insertPlayerToDB(String collectionName , String id , String name, String userName, String password, String email, String teamID )
@@ -130,4 +137,31 @@ public class DateAccessController {
         getDBCollection(collectionName).insert(dbObject);
     }
 
+    public static boolean checkIfIDExistsInDB(String collectionName,String id)
+    {
+        try{
+            getById(collectionName,id);
+            return true;
+        }
+        catch (Exception e)
+        {
+            return  false;
+        }
+    }
+
+    public static boolean checkIfUserNameExists(String userName)
+    {
+        try {
+            DBCollection dbCollection = (DBCollection) getDBCollection("User");
+            DBObject q = new BasicDBObject("userName", userName);
+            DBCursor c = dbCollection.find(q);
+            DBObject theObj = c.next();
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+
+    }
 }
