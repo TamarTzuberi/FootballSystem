@@ -7,23 +7,27 @@ import java.util.Date;
 
 public class DomainController {
 
-    private static User connectedUser;
     private static DomainController DC;
+    private User connectedUser;
     private static DataAccess.DateAccessController DAC;
 
-    private DomainController(String username, String password)
+    private DomainController()
     {
        // connectedUser = ***get from DB and check if correct****
     }
-
-
-    public static DomainController getDC(String username, String pass)
+    
+    public static DomainController getDC()
     {
         if (DC == null)
         {
-            DC = new DomainController(username, pass);
+            DC = new DomainController();
         }
         return DC;
+    }
+
+    public void setConnectedUser(User curUser) {
+//        DomainController.connectedUser = *****get from DB ;
+        connectedUser = curUser;
     }
 
     private static boolean checkFullName(String fullName) {
@@ -38,13 +42,20 @@ public class DomainController {
         return password.matches("^(?=.*\\\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20}$");
     }
 
-    public void login(String username, String password)
+    public boolean login(String username, String password)
     {
 
         //check if username exist in DB
         boolean userExists = DAC.checkIfUserNameExists(username);
+        if(userExists)
+        {
+            //get User details from DB
+            User curUser = new Subscriber("name", username, password, "email");
+            setConnectedUser(curUser);
+        }
         //check if password correct
         //connected user
+        return userExists;
     }
 
     public boolean registerReferee(String fullName, String email, String training)
@@ -72,12 +83,12 @@ public class DomainController {
 
     public boolean gamePlacement(String gameID , LocalDateTime time, String place)
     {
-        Date dateOfBirth = new Date("01/01/01");
-        Player player0 = new Player("player0", "player0", "player0", "player0@gmail.com", dateOfBirth, "player");
-        Player player1 = new Player("player1", "player1", "player1", "player1@gmail.com", dateOfBirth, "player");
-        Player player2 = new Player("player2", "player2", "player2", "player2@gmail.com", dateOfBirth, "player");
-        Coach coach0 = new Coach("coach0", "coach0", "coach0", "coach0@gmail.com", "basic", "coach");
-        Coach coach1 = new Coach("coach1", "coach1", "coach1", "coach1@gmail.com", "basic", "coach");
+        Date dateOfBirth = new Date();
+        Player player0 = new Player("player0","player0", "player0", "player0", "player0@gmail.com", dateOfBirth, "player");
+        Player player1 = new Player("player1","player1", "player1", "player1", "player1@gmail.com", dateOfBirth, "player");
+        Player player2 = new Player("player2", "player2","player2", "player2", "player2@gmail.com", dateOfBirth, "player");
+        Coach coach0 = new Coach("coach0","coach0", "coach0", "coach0", "coach0@gmail.com", "basic", "coach");
+        Coach coach1 = new Coach("coach1","coach1", "coach1", "coach1", "coach1@gmail.com", "basic", "coach");
         ArrayList<Player> playersHosted = new ArrayList<>();
         playersHosted.add(player0);
         playersHosted.add(player1);
@@ -86,7 +97,7 @@ public class DomainController {
         coachesHosted.add(coach0);
         coachesHosted.add(coach1);
         ArrayList<TeamOwner> ownersHosted = new ArrayList<>();
-        Team hostedTeam = new Team("team0",playersHosted,coachesHosted, ownersHosted);
+        Team hostedTeam = new Team("team0","team0",playersHosted,coachesHosted, ownersHosted);
         player0.setTeam(hostedTeam);
         player1.setTeam(hostedTeam);
         player2.setTeam(hostedTeam);
@@ -94,11 +105,11 @@ public class DomainController {
         coach1.setTeam(hostedTeam);
 
 
-        Player player3 = new Player("player3", "player3", "player3", "player3@gmail.com", dateOfBirth, "player");
-        Player player4 = new Player("player4", "player4", "player4", "player4@gmail.com", dateOfBirth, "player");
-        Player player5 = new Player("player5", "player5", "player5", "player5@gmail.com", dateOfBirth, "player");
-        Coach coach2 = new Coach("coach2", "coach2", "coach2", "coach2@gmail.com", "basic", "coach");
-        Coach coach3 = new Coach("coach3", "coach3", "coach3", "coach3@gmail.com", "basic", "coach");
+        Player player3 = new Player("player3","player3", "player3", "player3", "player3@gmail.com", dateOfBirth, "player");
+        Player player4 = new Player("player4","player4", "player4", "player4", "player4@gmail.com", dateOfBirth, "player");
+        Player player5 = new Player("player5", "player5","player5", "player5", "player5@gmail.com", dateOfBirth, "player");
+        Coach coach2 = new Coach("coach2","coach2", "coach2", "coach2", "coach2@gmail.com", "basic", "coach");
+        Coach coach3 = new Coach("coach3","coach3", "coach3", "coach3", "coach3@gmail.com", "basic", "coach");
         ArrayList<Player> playersGuest = new ArrayList<>();
         playersGuest.add(player3);
         playersGuest.add(player4);
@@ -107,13 +118,13 @@ public class DomainController {
         coachesGuest.add(coach2);
         coachesGuest.add(coach3);
         ArrayList<TeamOwner> ownersGuest = new ArrayList<>();
-        Team guestTeam = new Team("team1",playersGuest,coachesGuest, ownersGuest);
+        Team guestTeam = new Team("team1","team1",playersGuest,coachesGuest, ownersGuest);
         player3.setTeam(guestTeam);
         player4.setTeam(guestTeam);
         player5.setTeam(guestTeam);
         coach2.setTeam(guestTeam);
         coach3.setTeam(guestTeam);
-        Game game1 = new Game(hostedTeam, guestTeam);
+        Game game1 = new Game("game1", hostedTeam, guestTeam);
 
         if(guestTeam.checkAvailability(time) && hostedTeam.checkAvailability(time))
         {
@@ -123,8 +134,7 @@ public class DomainController {
         guestTeam.addGameTime(time);
         hostedTeam.addGameTime(time);
         //update DB with game, team1 team2
-
-
+        
 
         //get game from DB - with game id - and check if exist
         //create  Team 1 from DB

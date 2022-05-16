@@ -24,7 +24,7 @@ public class RegisterService {
 //        //*** check if guest? ***
 //        if(checkFullName(fullName))
 //        {
-//            if(checkEmail(email))
+//            if(checkE mail(email))
 //            {
 //                //if() ****check in DB if user exist****
 //                if(checkPassword(password))
@@ -49,16 +49,18 @@ public class RegisterService {
 //        }
 //    }
 
-    public DomainController login(String username, String password)
-    {
-        DomainController dc = DomainController.getDC(username, password);
-        return dc;
-    }
+//    public DomainController login(String username, String password)
+//    {
+////        DomainController dc = DomainController.getDC(username, password);
+//        return dc;
+//    }
 
     public void registerReferee(String repUsername, String repPass, String fullName, String email, String training)
     {
 //        check if the connected user is Representative ?? in domain controller
-        DomainController dc = login(repUsername, repPass);
+        DomainController dc = DomainController.getDC();
+        boolean ifUserExist = dc.login(repUsername, repPass);
+
         //create new domain controller with user
         boolean success = dc.registerReferee(fullName, email, training);
     }
