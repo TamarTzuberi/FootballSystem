@@ -8,10 +8,10 @@ public class League {
     private ArrayList<Team> teams;
     private ArrayList<LeagueInSeason> allLeagues;
 
-    public League(String name, ArrayList<Team> teams, ArrayList<LeagueInSeason> allLeauges) {
+    public League(String name, ArrayList<Team> teams, ArrayList<LeagueInSeason> allLeagues) {
         this.name = name;
         this.teams = teams;
-        this.allLeauges = allLeauges;
+        this.allLeagues = allLeagues;
     }
 
     public String getName() {
@@ -30,11 +30,11 @@ public class League {
         this.teams = teams;
     }
 
-    public ArrayList<LeagueInSeason> getAllLeauges() {
-        return allLeauges;
+    public ArrayList<LeagueInSeason> getAllLeagues() {
+        return allLeagues;
     }
 
-    public void setAllLeauges(ArrayList<LeagueInSeason> allLeauges) {
-        this.allLeauges = allLeauges;
+    public void setAllLeagues(ArrayList<LeagueInSeason> allLeagues) {
+        this.allLeagues = allLeagues;
     }
 }
