@@ -2,28 +2,11 @@ package Domain;
 
 import java.util.ArrayList;
 
-public class Fan {
+public class Fan extends Subscriber{
 
-    private String name;
-    private int age;
+    private ArrayList<Page> favoritePages;
 
-    public Fan() {
-
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public Fan(String name, String userName, String password, String email) {
+        super(name, userName, password, email);
     }
 }
