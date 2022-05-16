@@ -107,11 +107,11 @@ public class DateAccessController {
         }
     }
 
-    public String getById(String collectionName, String id)
+    public String getRecordFromDB(String collectionName, String key, String val)
     {
         try {
             DBCollection dbCollection = (DBCollection) getDBCollection(collectionName);
-            DBObject q = new BasicDBObject("_id", id);
+            DBObject q = new BasicDBObject(key, val);
             DBCursor c = dbCollection.find(q);
             DBObject theObj = c.next();
             String result = theObj.toString();
@@ -178,7 +178,7 @@ public class DateAccessController {
     public boolean checkIfIDExistsInDB(String collectionName,String id)
     {
         try{
-            getById(collectionName,id);
+            getRecordFromDB(collectionName,"_id",id);
             return true;
         }
         catch (Exception e)
