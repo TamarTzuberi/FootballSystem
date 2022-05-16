@@ -6,7 +6,7 @@ public class League {
 
     private String name;
     private ArrayList<Team> teams;
-    private ArrayList<LeagueInSeason> allLeauges;
+    private ArrayList<LeagueInSeason> allLeagues;
 
     public League(String name, ArrayList<Team> teams, ArrayList<LeagueInSeason> allLeauges) {
         this.name = name;

@@ -19,6 +19,7 @@ public class DateAccessController {
     }
 
     public static void main(String[] args) throws UnknownHostException {
+//        insertTeamToDB("Team", "macabiTelAviv, ");
 //        mongoClient = new MongoClient(new MongoClientURI("mongodb://localhost:27017"));
 //        database = mongoClient.getDB("FootballSystem");
 //        test = database.getCollection("test");
@@ -87,7 +88,7 @@ public class DateAccessController {
         getDBCollection(collectionName).insert(dbObject);
     }
 
-    public static void inserTeamToDB(String collectionName , String id , String name, ArrayList<String>players, ArrayList<String>coaches, ArrayList<String>teamOwners, ArrayList<Date>datesOfGames)
+    public static void insertTeamToDB(String collectionName , String id , String name, ArrayList<String> players, ArrayList<String>coaches, ArrayList<String>teamOwners, ArrayList<Date>datesOfGames)
     {
         DBObject dbObject = new BasicDBObject();
         dbObject.put("_id", id);
@@ -99,7 +100,7 @@ public class DateAccessController {
         getDBCollection(collectionName).insert(dbObject);
     }
 
-    public static void inserGameToDB(String collectionName , String id , String time, String hostTeamId, String guestTeamId, String field)
+    public static void insertGameToDB(String collectionName , String id , String time, String hostTeamId, String guestTeamId, String field)
     {
         DBObject dbObject = new BasicDBObject();
         dbObject.put("_id", id);
@@ -107,6 +108,25 @@ public class DateAccessController {
         dbObject.put("hostTeamId", hostTeamId);
         dbObject.put("guestTeamId", guestTeamId);
         dbObject.put("field", field);
+        getDBCollection(collectionName).insert(dbObject);
+    }
+
+    public static void insertSeasonToDB(String collectionName , String id , Date startDate, Date endDate, ArrayList<String> LeaguesInSeason)
+    {
+        DBObject dbObject = new BasicDBObject();
+        dbObject.put("_id", id);
+        dbObject.put("startDate", startDate);
+        dbObject.put("endDate", endDate);
+        dbObject.put("LeaguesInSeason", LeaguesInSeason);
+        getDBCollection(collectionName).insert(dbObject);
+    }
+    public static void insertLeagueToDB(String collectionName , String id , String name, ArrayList<String> teams, ArrayList<String> leagues)
+    {
+        DBObject dbObject = new BasicDBObject();
+        dbObject.put("_id", id);
+        dbObject.put("startDate", name);
+        dbObject.put("endDate", teams);
+        dbObject.put("LeaguesInSeason", leagues);
         getDBCollection(collectionName).insert(dbObject);
     }
 
