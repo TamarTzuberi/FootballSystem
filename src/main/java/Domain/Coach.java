@@ -5,12 +5,27 @@ public class Coach extends ClubStaff{
     private Page page;
     private String training;
     private String role;
+    private Team team;
+    private static int id=0;
+    private String coachId;
 
-    public Coach(String name, String userName, String password, String email, Team team, Page page, String training, String role) {
-        super(name, userName, password, email, team);
-        this.page = page;
+    public Coach(String name, String userName, String password, String email, String training, String role) {
+        super(name, userName, password, email);
+//        this.page = page;
         this.training = training;
         this.role = role;
+        this.coachId = "coach" + id;
+        id ++;
+
+    }
+
+    @Override
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
+    public String getCoachId() {
+        return coachId;
     }
 
     public Page getPage() {

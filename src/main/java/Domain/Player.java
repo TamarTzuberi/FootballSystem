@@ -4,15 +4,29 @@ import java.util.Date;
 
 public class Player extends ClubStaff{
 
+    private static int id = 0;
+    private String playerId;
     private Page page;
     private Date birthDate;
     private String role;
+    private Team team;
 
-    public Player(String name, String userName, String password, String email, Team team, Page page, Date birthDate, String role) {
-        super(name, userName, password, email, team);
-        this.page = page;
+    public Player(String name, String userName, String password, String email, Date birthDate, String role) {
+        super(name, userName, password, email);
+//        this.page = page;
         this.birthDate = birthDate;
         this.role = role;
+        this.playerId = "player" + id;
+        id ++;
+    }
+
+    @Override
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
+    public String getPlayerId() {
+        return playerId;
     }
 
     public Page getPage() {

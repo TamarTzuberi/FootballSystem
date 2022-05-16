@@ -4,9 +4,9 @@ public class ClubStaff extends Subscriber{
 
     private Team team;
 
-    public ClubStaff(String name, String userName, String password, String email, Team team) {
+    public ClubStaff(String name, String userName, String password, String email) {
         super(name, userName, password, email);
-        this.team = team;
+//        this.team = team;
     }
 
     public Team getTeam() {
