@@ -1,9 +1,14 @@
 package Service;
 import Domain.*;
+
+import java.time.LocalDateTime;
 import java.util.*;
 
 
 public class SignInService {
+
+    //all users
+    private static ArrayList<User> allUsers;
 
     private boolean checkFullName(String fullName)
     {
@@ -47,6 +52,7 @@ public class SignInService {
         }
     }
 
+    //change name to register
     public void signInGuest(String fullName, String email, String username, String password)
     {
         //*** check if guest? ***
@@ -75,6 +81,77 @@ public class SignInService {
         {
             System.out.println("not a valid name");
         }
+    }
+
+    public void registerRole(String fullName, String email, String role)
+    {
+        //*** check who sign is representative? ***
+        if(checkFullName(fullName))
+        {
+            if(checkEmail(email))
+            {
+                //if() ****check in DB if email exist****
+                String[] splitName = fullName.split(" ");
+                String username = splitName[0] + splitName[1].charAt(0);
+                String passwordRole =  username + role;
+//                if (role.equals("Coach"))
+//                {
+//                    Coach newCoach = new Coach(fullName, username, passwordRole, email, );
+//                }
+//                else if (role.equals("Referee"))
+//                {
+//                    Referee newReferee = new Referee(fullName, username,passwordRole, email);
+//                }
+//                else if (role.equals("Player"))
+//                {
+//                    Player newPlayer = new Player();
+//                }
+//                else if (role.equals("TeamManager"))
+//                {
+//                    TeamManager newTeamManager = new TeamManager();
+//                }
+//                else if (role.equals("TeamOwner"))
+//                {
+//                    TeamOwner newTeamOwner = new TeamOwner();
+//                }
+//                else
+//                {
+//                    System.out.println("not a valid role");
+//                }
+                //****** add to DB ******
+                //****** send email with details ******
+                System.out.println("The account created successfully");
+                //****** write to log ******
+
+            }
+            else {
+                System.out.println("not a valid email");
+            }
+        }
+        else
+        {
+            System.out.println("not a valid name");
+        }
+    }
+
+    public void login(String username, String password)
+    {
+
+    }
+
+    public void addGame(Team hostTeam, Team GuestTeam)
+    {
+//        Game newGame = new Game()
+    }
+
+    public void gamePlacement(Game game, LocalDateTime time, String place)
+    {
+
+    }
+
+    public void addFinalScore(Game game)
+    {
+
     }
 
 
