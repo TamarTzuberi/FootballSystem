@@ -1,11 +1,6 @@
 package DataAccess;
 import com.mongodb.*;
-import com.mongodb.util.JSON;
-import com.sun.org.apache.bcel.internal.generic.PUSH;
 import com.mongodb.DB;
-import com.mongodb.MongoClient;
-import com.mongodb.MongoClientURI;
-import org.bson.types.ObjectId;
 
 
 import java.net.UnknownHostException;
@@ -13,13 +8,13 @@ import java.util.ArrayList;
 import java.util.Date;
 
 
-public class MongoDB{
+public class DateAccessController {
 
-    private static final MongoDB instance = new MongoDB();
+    private static final DateAccessController instance = new DateAccessController();
     static DBConnector dbc = DBConnector.getInstance();
     static DB database = dbc.getConnection();
 
-    public static MongoDB getInstance(){
+    public static DateAccessController getInstance(){
         return instance;
     }
 
@@ -52,7 +47,7 @@ public class MongoDB{
 
     }
 
-    private MongoDB() {
+    private DateAccessController() {
 
     }
 
