@@ -1,21 +1,45 @@
 package Domain;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Team {
 
+    private static int id =0;
+    private String teamId;
     private String name;
     private ArrayList<Player> players;
     private ArrayList<Coach> coaches;
     private ArrayList<TeamOwner> teamOwners;
     private Page page;
+    private ArrayList<LocalDateTime> datesOfGames;
 
-    public Team(String name, ArrayList<Player> players, ArrayList<Coach> coaches, ArrayList<TeamOwner> teamOwners, Page page) {
+    public Team(String name, ArrayList<Player> players, ArrayList<Coach> coaches, ArrayList<TeamOwner> teamOwners) {
         this.name = name;
         this.players = players;
         this.coaches = coaches;
         this.teamOwners = teamOwners;
-        this.page = page;
+//        this.page = page;
+        this.datesOfGames = new ArrayList<>();
+        this.teamId = "team" + id;
+        id++;
+    }
+
+    public String getTeamId() {
+        return teamId;
+    }
+
+    public void addGameTime(LocalDateTime timeOfGame)
+    {
+        datesOfGames.add(timeOfGame);
+    }
+
+    public ArrayList<LocalDateTime> getDatesOfGames() {
+        return datesOfGames;
+    }
+    public boolean checkAvailability(LocalDateTime time)
+    {
+        return !this.datesOfGames.contains(time);
     }
 
     public String getName() {
