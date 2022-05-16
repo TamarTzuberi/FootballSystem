@@ -2,6 +2,9 @@ package DataAccess;
 import Domain.Fan;
 import com.mongodb.*;
 import com.sun.org.apache.bcel.internal.generic.PUSH;
+import com.mongodb.DB;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 
 import java.net.UnknownHostException;
 
@@ -40,6 +43,15 @@ public class MongoDB {
         DBCursor c = dbCollection.find(q);
         return c;
     }
+
+//    public void insertDB()
+//    {
+//        Fan f = new Fan();
+//        f.setName("bob");
+//        f.setAge(22);
+//        test.insert(convert(f));
+//    }
+//
 //    public static DB database;
 //    public static DBCollection test;
     public static void main(String[] args) throws UnknownHostException {
