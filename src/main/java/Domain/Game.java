@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 public class Game {
 
 
-    private static int id = 0;
     private String gameId;
     private LocalDateTime time;
     private Team hostTeam;
@@ -15,7 +14,7 @@ public class Game {
     private int guestScore;
     private EventCalender calender;
 
-    public Game(Team hostTeam, Team guestTeam) {
+    public Game(String id, Team hostTeam, Team guestTeam) {
 //        this.time = time;
         this.hostTeam = hostTeam;
         this.guestTeam = guestTeam;
@@ -23,8 +22,7 @@ public class Game {
 //        this.hostScore = hostScore;
 //        this.guestScore = guestScore;
 //        this.calender = calender;
-        this.gameId = "Game" + id;
-        id++;
+        this.gameId = id;
     }
 
     public String getGameId() {

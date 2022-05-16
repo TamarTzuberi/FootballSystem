@@ -6,16 +6,14 @@ public class Coach extends ClubStaff{
     private String training;
     private String role;
     private Team team;
-    private static int id=0;
     private String coachId;
 
-    public Coach(String name, String userName, String password, String email, String training, String role) {
+    public Coach(String id, String name, String userName, String password, String email, String training, String role) {
         super(name, userName, password, email);
 //        this.page = page;
         this.training = training;
         this.role = role;
-        this.coachId = "coach" + id;
-        id ++;
+        this.coachId = id;
 
     }
 

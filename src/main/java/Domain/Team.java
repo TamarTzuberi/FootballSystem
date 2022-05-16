@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class Team {
 
-    private static int id =0;
     private String teamId;
     private String name;
     private ArrayList<Player> players;
@@ -14,15 +13,14 @@ public class Team {
     private Page page;
     private ArrayList<LocalDateTime> datesOfGames;
 
-    public Team(String name, ArrayList<Player> players, ArrayList<Coach> coaches, ArrayList<TeamOwner> teamOwners) {
+    public Team(String id, String name, ArrayList<Player> players, ArrayList<Coach> coaches, ArrayList<TeamOwner> teamOwners) {
         this.name = name;
         this.players = players;
         this.coaches = coaches;
         this.teamOwners = teamOwners;
 //        this.page = page;
         this.datesOfGames = new ArrayList<>();
-        this.teamId = "team" + id;
-        id++;
+        this.teamId = id;
     }
 
     public String getTeamId() {
