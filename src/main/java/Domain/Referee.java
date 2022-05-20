@@ -8,6 +8,8 @@ public class Referee extends Subscriber{
 
     public Referee(String name, String userName, String password, String email, String training) {
         super(name, userName, password, email);
+        if (training == null)
+            throw new NullPointerException("One or more of the arguments are Null");
         this.training = training;
         refId = "referee" + id;
         id ++;
@@ -18,7 +20,10 @@ public class Referee extends Subscriber{
     }
 
     public void setTraining(String training) {
-        this.training = training;
+        if (training != null )
+            this.training = training;
+        throw new NullPointerException("training argument is Null");
+
     }
 
     public String getRefId() {

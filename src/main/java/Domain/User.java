@@ -5,6 +5,8 @@ public abstract class User {
     private String name;
 
     public User(String name){
+        if (name ==  null)
+            throw new NullPointerException("name argument is Null");
         this.name = name;
     }
 
@@ -13,6 +15,9 @@ public abstract class User {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if(name!=null)
+            this.name = name;
+        else
+            throw new NullPointerException("name argument is Null");
     }
 }

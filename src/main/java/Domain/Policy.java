@@ -6,6 +6,8 @@ public abstract class Policy {
     private String description;
 
     public Policy(String name, String description) {
+        if ( name == null || description == null)
+            throw new NullPointerException("One or more of the arguments are Null");
         this.name = name;
         this.description = description;
     }
@@ -15,7 +17,10 @@ public abstract class Policy {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if ( name != null)
+            this.name = name;
+        else
+            throw new NullPointerException("name argument is Null");
     }
 
     public String getDescription() {
@@ -23,6 +28,9 @@ public abstract class Policy {
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        if ( description != null)
+            this.description = description;
+        else
+            throw new NullPointerException("coaches argument is Null");
     }
 }

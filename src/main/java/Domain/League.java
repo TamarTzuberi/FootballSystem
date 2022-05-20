@@ -5,13 +5,15 @@ import java.util.ArrayList;
 public class League {
 
     private String name;
-    private ArrayList<Team> teams;
-    private ArrayList<LeagueInSeason> allLeagues;
+    private ArrayList<String> teamsId;
+    private ArrayList<String> allLeaguesId;
 
-    public League(String name, ArrayList<Team> teams, ArrayList<LeagueInSeason> allLeagues) {
+    public League(String name, ArrayList<String> teamsId, ArrayList<String> allLeaguesId) {
+        if(name == null || teamsId == null || allLeaguesId == null)
+            throw new NullPointerException("One or more of the arguments are Null");
         this.name = name;
-        this.teams = teams;
-        this.allLeagues = allLeagues;
+        this.teamsId = teamsId;
+        this.allLeaguesId = allLeaguesId;
     }
 
     public String getName() {
@@ -19,22 +21,31 @@ public class League {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if ( name != null)
+            this.name = name;
+        else
+            throw new NullPointerException("name argument is Null");
     }
 
-    public ArrayList<Team> getTeams() {
-        return teams;
+    public ArrayList<String> getTeams() {
+        return teamsId;
     }
 
-    public void setTeams(ArrayList<Team> teams) {
-        this.teams = teams;
+    public void setTeamsId(ArrayList<String> teamsId) {
+        if ( teamsId != null)
+            this.teamsId = teamsId;
+        else
+            throw new NullPointerException("teamsId argument is Null");
     }
 
-    public ArrayList<LeagueInSeason> getAllLeagues() {
-        return allLeagues;
+    public ArrayList<String> getAllLeaguesId() {
+        return allLeaguesId;
     }
 
-    public void setAllLeagues(ArrayList<LeagueInSeason> allLeagues) {
-        this.allLeagues = allLeagues;
+    public void setAllLeaguesId(ArrayList<String> allLeaguesId) {
+        if ( allLeaguesId != null)
+            this.allLeaguesId = allLeaguesId;
+        else
+            throw new NullPointerException("allLeaguesId argument is Null");
     }
 }

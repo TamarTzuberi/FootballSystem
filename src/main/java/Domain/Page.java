@@ -6,9 +6,9 @@ public class Page {
 
     private int pID;
     private String userName;
-    private ArrayList<Subscriber> editors;
+    private ArrayList<String> editors;
 
-    public Page(int pID, String userName, ArrayList<Subscriber> editor) {
+    public Page(int pID, String userName, ArrayList<String> editor) {
         this.pID = pID;
         this.userName = userName;
         this.editors = editor;
@@ -30,11 +30,11 @@ public class Page {
         this.userName = userName;
     }
 
-    public ArrayList<Subscriber> getEditor() {
+    public ArrayList<String> getEditor() {
         return editors;
     }
 
-    public void setEditor(ArrayList<Subscriber> editors) {
+    public void setEditor(ArrayList<String> editors) {
         this.editors = editors;
     }
 }

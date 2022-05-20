@@ -7,9 +7,11 @@ public class Season {
 
     private Date startDate;
     private Date endDate;
-    private ArrayList<LeagueInSeason> allLeagues;
+    private ArrayList<String> allLeagues;
 
-    public Season(Date startDate, Date endDate, ArrayList<LeagueInSeason> allLeagues) {
+    public Season(Date startDate, Date endDate, ArrayList<String> allLeagues) {
+        if ( startDate == null || endDate == null || allLeagues == null)
+            throw new NullPointerException("One or more of the arguments are Null");
         this.startDate = startDate;
         this.endDate = endDate;
         this.allLeagues = allLeagues;
@@ -20,7 +22,11 @@ public class Season {
     }
 
     public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+        if ( startDate != null)
+            this.startDate = startDate;
+        else
+            throw new NullPointerException("startDate argument is Null");
+
     }
 
     public Date getEndDate() {
@@ -28,14 +34,21 @@ public class Season {
     }
 
     public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+        if ( endDate != null)
+            this.endDate = endDate;
+        else
+            throw new NullPointerException("endDate argument is Null");
+
     }
 
-    public ArrayList<LeagueInSeason> getAllLeagues() {
+    public ArrayList<String> getAllLeagues() {
         return allLeagues;
     }
 
-    public void setAllLeagues(ArrayList<LeagueInSeason> allLeagues) {
-        this.allLeagues = allLeagues;
+    public void setAllLeagues(ArrayList<String> allLeagues) {
+        if (allLeagues != null )
+            this.allLeagues = allLeagues;
+        else
+            throw new NullPointerException("allLeagues argument is Null");
     }
 }

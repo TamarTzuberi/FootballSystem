@@ -8,8 +8,8 @@ public class Subscriber extends User{
 
     public Subscriber(String name, String userName, String password, String email) {
         super(name);
-        if (userName == null || password == null || email == null) {
-            return;
+        if (name == null || userName == null || password == null || email == null) {
+            throw new NullPointerException("One or more of the arguments are Null");
         }
         this.userName = userName;
         this.password = password;
@@ -21,7 +21,10 @@ public class Subscriber extends User{
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        if( userName != null)
+            this.userName = userName;
+        else
+            throw new NullPointerException("user Name argument is Null");
     }
 
     public String getPassword() {
@@ -29,7 +32,10 @@ public class Subscriber extends User{
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        if ( password != null)
+            this.password = password;
+        else
+            throw new NullPointerException("password argument is Null");
     }
 
     public String getEmail() {
@@ -37,6 +43,9 @@ public class Subscriber extends User{
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        if( email != null)
+            this.email = email;
+        else
+            throw new NullPointerException("email argument is Null");
     }
 }
