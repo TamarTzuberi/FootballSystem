@@ -19,15 +19,12 @@ public class SubscriberDAO implements DAO {
     }
 
     private SubscriberDAO(){
-        
+
     }
 
     public static void main(String[] args) {
-//        SubscriberDAO subscriberDAO = getInstance();
-//        Subscriber s = new Subscriber("bob","userBob","123","email1123");
-//        subscriberDAO.save("1",s);
-//        Document d = subscriberDAO.get("1");
-//        System.out.println(((Document)d.get("subscriber")).get("name"));
+//        System.out.println(getInstance().checkIfSubscriberExists("userBob"));
+
     }
 
 
@@ -43,4 +40,17 @@ public class SubscriberDAO implements DAO {
         Document  d = (Document) collection.find(eq("_id", id)).first();
         return d;
     }
+
+//    public boolean checkIfSubscriberExists(String userName)
+//    {
+//        try{
+//            MongoCollection collection=database.getCollection("subscribers");
+//            Document  d = (Document) collection.find(eq("_id", "1")).first();
+//            return true;
+//        }
+//        catch (Exception e)
+//        {
+//            return false;
+//        }
+//    }
 }

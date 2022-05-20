@@ -1,92 +1,106 @@
-//package Domain;
-//
-//
-//import java.time.LocalDateTime;
-//import java.util.ArrayList;
-//import java.util.Date;
-//
-//public class DomainController {
-//
-//    private static DomainController DC;
-//    private User connectedUser;
-//    private static DataAccess.DateAccessController DAC;
-//
-//    private DomainController()
-//    {
-//       // connectedUser = ***get from DB and check if correct****
-//    }
-//
-//    public static DomainController getDC()
-//    {
-//        if (DC == null)
-//        {
-//            DC = new DomainController();
-//        }
-//        return DC;
-//    }
-//
-//    public void setConnectedUser(User curUser) {
-////        DomainController.connectedUser = *****get from DB ;
-//        connectedUser = curUser;
-//    }
-//
-//    private static boolean checkFullName(String fullName) {
-//        return fullName.matches("[a-zA-Z]+");
-//    }
-//
-//    private static boolean checkEmail(String email) {
-//        return email.matches("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
-//    }
-//
-//    private boolean checkPassword(String password) {
-//        return password.matches("^(?=.*\\\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20}$");
-//    }
-//
-//    public boolean login(String username, String password)
-//    {
-//
-//        //check if username exist in DB
-//        boolean userExists = DAC.checkIfUserNameExists(username);
+package Domain;
+
+
+import org.bson.Document;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Date;
+
+public class DomainController {
+
+    private static DomainController DC;
+    private User connectedUser;
+    private static DataAccess.SubscriberDAO subscriberDAO;
+
+    private DomainController()
+    {
+       // connectedUser = ***get from DB and check if correct****
+    }
+
+    public static DomainController getDC()
+    {
+        if (DC == null)
+        {
+            DC = new DomainController();
+        }
+        return DC;
+    }
+
+    public void setConnectedUser(User curUser) {
+//        DomainController.connectedUser = *****get from DB ;
+        connectedUser = curUser;
+    }
+
+    private static boolean checkFullName(String fullName) {
+        return fullName.matches("[a-zA-Z]+");
+    }
+
+    private static boolean checkEmail(String email) {
+        return email.matches("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+    }
+
+    private boolean checkPassword(String password) {
+        return password.matches("^(?=.*\\\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20}$");
+    }
+
+    public boolean login(String username, String password)
+    {
+
+        //check if username exist in DB
+//        boolean userExists = subscriberDAO.checkIfUserNameExists(username);
 //        if(userExists)
-//        {
-//            //check if password correct
-//            String userDetails = DAC.getRecordFromDB("User", "userName", username);
-//            String[] splitRecord = userDetails.split(" ");
-////            for(String s : splitRecord)
-////            {
-////
-////            }
-//
-//            //get User details from DB
-//            User curUser = new Subscriber("name", username, password, "email");
-//            setConnectedUser(curUser);
-//        }
-//        //connected user
+        {
+            //check if password correct
+
+            String userId = "";
+            Document subscriber = subscriberDAO.get(userId);
+
+            //get User details from DB
+            User curUser = getTheUser(subscriber);
+            setConnectedUser(curUser);
+        }
+        //connected user
 //        return userExists;
-//    }
-//
-//    public boolean registerReferee(String fullName, String email, String training)
-//    {
-//        if (checkFullName(fullName)) {
-//            if (checkEmail(email)) {
-//                //if() ****check in DB if email exist**** in data layer
-//
-//                String[] splitName = fullName.split(" ");
-//                String username = splitName[0] + splitName[1].charAt(0);
-//                String password = username + "Referee";
-//                Referee newReferee = new Referee(fullName, username, password, email, training);
-//                //add to DB - send string - username:Stav, password:pass, Name:Stav Keidar ***send id from getID
-//                //send mail to referee
-//                //write in log
-//                System.out.println("register successful");
-//                return true;
-//            }
-//            else
-//                return false;
-//        }
-//        else
-//            return false;
-//    }
+
+
+        return true;
+    }
+
+    public Subscriber getTheUser(Document subscriber)
+    {
+        Document subscriberDetails = (Document) subscriber.get("subscriber");
+        String userName = (String)subscriberDetails.get("userName");
+        String name = (String)subscriberDetails.get("name");
+        String password = (String)subscriberDetails.get("password");
+        String email = (String)subscriberDetails.get("email");
+        return (new Subscriber(name,userName,password,email));
+    }
+
+
+
+    public boolean registerReferee(String fullName, String email, String training)
+    {
+        if (checkFullName(fullName)) {
+            if (checkEmail(email)) {
+                //if() ****check in DB if email exist**** in data layer
+
+                String[] splitName = fullName.split(" ");
+                String username = splitName[0] + splitName[1].charAt(0);
+                String password = username + "Referee";
+                Referee newReferee = new Referee(fullName, username, password, email, training);
+                //add to DB - send string - username:Stav, password:pass, Name:Stav Keidar ***send id from getID
+                //send mail to referee
+                //write in log
+                System.out.println("register successful");
+                return true;
+            }
+            else
+                return false;
+        }
+        else
+            return false;
+    }
 //
 //    public boolean gamePlacement(String gameID , LocalDateTime time, String place)
 //    {
@@ -156,4 +170,4 @@
 //
 //
 //    }
-//}
+}
