@@ -49,11 +49,18 @@ public class DomainController {
         boolean userExists = DAC.checkIfUserNameExists(username);
         if(userExists)
         {
+            //check if password correct
+            String userDetails = DAC.getRecordFromDB("User", "userName", username);
+            String[] splitRecord = userDetails.split(" ");
+//            for(String s : splitRecord)
+//            {
+//
+//            }
+
             //get User details from DB
             User curUser = new Subscriber("name", username, password, "email");
             setConnectedUser(curUser);
         }
-        //check if password correct
         //connected user
         return userExists;
     }
