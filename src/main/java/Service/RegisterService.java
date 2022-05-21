@@ -55,7 +55,7 @@ public class RegisterService {
 //        return dc;
 //    }
 
-    public void registerReferee(String repUsername, String repPass, String fullName, String email, String training)
+    public void registerReferee(String id, String repUsername, String repPass, String fullName, String email, String training)
     {
 //        check if the connected user is Representative ?? in domain controller
         DomainController dc = DomainController.getDC();
@@ -63,7 +63,7 @@ public class RegisterService {
         boolean ifRep = dc.checkIfRepresentative();
         if(ifRep)
         {
-            boolean success = dc.registerReferee(fullName, email, training);
+            boolean success = dc.registerReferee(id, fullName, email, training);
         }
         else
         {

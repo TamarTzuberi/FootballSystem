@@ -41,16 +41,23 @@ public class SubscriberDAO implements DAO {
         return d;
     }
 
-//    public boolean checkIfSubscriberExists(String userName)
-//    {
-//        try{
-//            MongoCollection collection=database.getCollection("subscribers");
-//            Document  d = (Document) collection.find(eq("_id", "1")).first();
-//            return true;
-//        }
-//        catch (Exception e)
-//        {
-//            return false;
-//        }
-//    }
+    // TODO - Tamar - create generic function that check existence user by key and value
+    public boolean checkIfSubscriberExists(String userName)
+    {
+        try{
+            MongoCollection collection=database.getCollection("subscribers");
+            Document  d = (Document) collection.find(eq("_id", "1")).first();
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+
+    public String getIdByUsername(String username)
+    {
+        return "3";
+    }
+
 }

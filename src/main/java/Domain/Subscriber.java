@@ -9,7 +9,7 @@ public class Subscriber extends User{
     private String type;
 
     //add type to constructor
-    public Subscriber(String ID, String name, String userName, String password, String email) {
+    public Subscriber(String ID, String name, String userName, String password, String email, String type) {
         super(name);
         if (name == null || userName == null || password == null || email == null) {
             throw new NullPointerException("One or more of the arguments are Null");
@@ -18,7 +18,9 @@ public class Subscriber extends User{
         this.userName = userName;
         this.password = password;
         this.email = email;
+        this.type = type;
     }
+
 
     public String getUserName() {
         return userName;
@@ -56,4 +58,17 @@ public class Subscriber extends User{
         else
             throw new NullPointerException("email argument is Null");
     }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
 }

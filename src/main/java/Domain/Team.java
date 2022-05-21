@@ -7,21 +7,19 @@ public class Team {
 
     private String teamId;
     private String name;
-    private ArrayList<String> playersId;
-    private ArrayList<String> coachesId;
-    private ArrayList<String> teamOwnersId;
-    private Page page;
+    //    private ArrayList<String> playersId;
+//    private ArrayList<String> coachesId;
+//    private ArrayList<String> teamOwnersId;
     private ArrayList<LocalDateTime> datesOfGames;
 
-    public Team(String id, String name, ArrayList<String> playersId, ArrayList<String> coachesId, ArrayList<String> teamOwnersId) {
-        if (name == null || id == null || playersId == null || coachesId == null || teamOwnersId == null) {
+    public Team(String id, String name) {
+        if (name == null || id == null) {
             throw new NullPointerException("One or more of the arguments are Null");
         }
         this.name = name;
-        this.playersId = playersId;
-        this.coachesId = coachesId;
-        this.teamOwnersId = teamOwnersId;
-//        this.page = page;
+//        this.playersId = playersId;
+//        this.coachesId = coachesId;
+//        this.teamOwnersId = teamOwnersId;
         this.datesOfGames = new ArrayList<>();
         this.teamId = id;
     }
@@ -42,6 +40,11 @@ public class Team {
     public ArrayList<LocalDateTime> getDatesOfGames() {
         return datesOfGames;
     }
+
+    public void setDatesOfGames(ArrayList<LocalDateTime> datesOfGames) {
+        this.datesOfGames = datesOfGames;
+    }
+
     public boolean checkAvailability(LocalDateTime time)
     {
         if ( time != null)
@@ -61,49 +64,4 @@ public class Team {
             throw new NullPointerException("name argument is Null");
     }
 
-    public ArrayList<String> getPlayers() {
-        return playersId;
-    }
-
-    public void setPlayers(ArrayList<String> playersId) {
-        if (playersId != null)
-            this.playersId = playersId;
-        else
-            throw new NullPointerException("players argument is Null");
-    }
-
-    public ArrayList<String> getCoaches() {
-        return coachesId;
-    }
-
-    public void setCoaches(ArrayList<String> coachesId) {
-        if (coachesId != null)
-            this.coachesId = coachesId;
-        else
-            throw new NullPointerException("coaches argument is Null");
-
-    }
-
-    public ArrayList<String> getTeamOwners() {
-        return teamOwnersId;
-    }
-
-    public void setTeamOwners(ArrayList<String> teamOwnersId) {
-        if ( teamOwnersId != null)
-            this.teamOwnersId = teamOwnersId;
-        else
-            throw new NullPointerException("teamOwners argument is Null");
-    }
-
-    public Page getPage() {
-        return page;
-    }
-
-    public void setPage(Page page) {
-        if (page != null)
-            this.page = page;
-        else
-            throw new NullPointerException("page argument is Null");
-
-    }
 }

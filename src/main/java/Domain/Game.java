@@ -15,13 +15,8 @@ public class Game {
     private EventCalender calender;
 
     public Game(String id, String hostTeam, String guestTeam) {
-//        this.time = time;
         this.hostTeamID = hostTeam;
         this.guestTeamID = guestTeam;
-//        this.field = field;
-//        this.hostScore = hostScore;
-//        this.guestScore = guestScore;
-//        this.calender = calender;
         this.gameId = id;
     }
 

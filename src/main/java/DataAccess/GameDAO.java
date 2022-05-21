@@ -1,11 +1,15 @@
 package DataAccess;
 
+import Domain.Game;
 import Domain.Subscriber;
 import Domain.User;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.bson.types.ObjectId;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 import static com.mongodb.client.model.Filters.eq;
 public class GameDAO implements DAO {
@@ -33,4 +37,10 @@ public class GameDAO implements DAO {
         Document  d = (Document) collection.find(eq("_id", id)).first();
         return d;
     }
+
+    // TODO Tamer
+    public void update(Object game){
+        // update exist game
+    }
+
 }

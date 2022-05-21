@@ -1,21 +1,21 @@
 package Domain;
 
-
 import org.bson.Document;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
 
 public class DomainController {
 
     private static DomainController DC;
     private Subscriber connectedUser;
     private static DataAccess.SubscriberDAO subscriberDAO;
+    private static DataAccess.GameDAO gameDAO;
+    private static DataAccess.TeamDAO teamDAO;
+    private static Logger logger = Logger.getInstance("logs");
 
     private DomainController()
     {
-       // connectedUser = ***get from DB and check if correct****
+       // connectedUser = ***get from DB and check if correct**
     }
 
     public static DomainController getDC()
@@ -46,21 +46,20 @@ public class DomainController {
 
     public boolean login(String username, String password)
     {
-
         //check if username exist in DB
-//        boolean userExists = subscriberDAO.checkIfUserNameExists(username);
-//        if(userExists)
+        boolean userExists = subscriberDAO.checkIfSubscriberExists(username);
+        if(userExists)
         {
-            //check if password correct
-
-            String userId = "";
+            String userId = subscriberDAO.getIdByUsername(username);
             Document subscriber = subscriberDAO.get(userId);
 
             //get User details from DB
             Subscriber curUser = getTheUser(subscriber);
+            //check if password correct
             if(curUser.getPassword().equals(password))
             {
                 setConnectedUser(curUser);
+                logger.toLog("DC - User connected successfully");
                 return true;
             }
             else
@@ -69,6 +68,8 @@ public class DomainController {
                 return false;
             }
         }
+        System.out.println("Username not exist");
+        return false;
         //connected user
 //        return userExists;
     }
@@ -100,11 +101,12 @@ public class DomainController {
         return null;
     }
 
-    public boolean registerReferee(String fullName, String email, String training)
+    public boolean registerReferee(String id, String fullName, String email, String training)
     {
         if (checkFullName(fullName)) {
             if (checkEmail(email)) {
                 //if() ****check in DB if email exist**** in data layer
+                // check mail exist in generic function
                 if(checkIfStrExists("email",email)) {
                     System.out.println("User already exists");
                     return false;
@@ -117,6 +119,7 @@ public class DomainController {
                     //add to DB - send string - username:Stav, password:pass, Name:Stav Keidar ***send id from getID
                     //send mail to referee
                     //write in log
+                    logger.toLog("DC - Referee registered successfully");
                     System.out.println("register successful");
                     return true;
                 }
@@ -127,9 +130,85 @@ public class DomainController {
         else
             return false;
     }
-//
-//    public boolean gamePlacement(String gameID , LocalDateTime time, String place)
-//    {
+
+    public Game getTheGame(Document game)
+    {
+        Document gameDetails = (Document) game.get("game");
+        String gameID = (String)gameDetails.get("gameID");
+        String hostTeamID = (String)gameDetails.get("hostTeamID");
+        String guestTeamID = (String)gameDetails.get("guestTeamID");
+        try{
+            return new Game(gameID,hostTeamID,guestTeamID);
+        } catch (Exception e) {
+            System.out.println("Didn't succeed to create Game object");
+            return null;
+        }
+    }
+
+    public Team getTheTeam(Document team)
+    {
+        Document teamDetails = (Document) team.get("team");
+        String teamID = (String)teamDetails.get("teamID");
+        String name = (String)teamDetails.get("name");
+        // TODO - Tamar
+//        ArrayList<LocalDateTime> datesOfGames = teamDAO.getDatesOfGame(teamID);
+        try{
+            // newTeam.setDatesOfGames(datesOfGames);
+            return new Team(teamID,name);
+        } catch (Exception e) {
+            System.out.println("Didn't succeed to create Team object");
+            return null;
+        }
+    }
+
+
+    public boolean gamePlacement(String gameID , LocalDateTime time, String place)
+    {
+        //get game from DB - with game id - and check if exist
+//        String userId = "";
+        Document game = gameDAO.get(gameID);
+        if (game.equals("")){
+            System.out.println("Game not exist");
+            return false;
+        }
+        else {
+            Game newGame = getTheGame(game);
+            String hostTeamId = newGame.getHostTeamID();
+            String guestTeamId = newGame.getGuestTeamID();
+            Document team1 = teamDAO.get(hostTeamId);
+            Team hostTeam = getTheTeam(team1);
+            Document team2 = teamDAO.get(guestTeamId);
+            Team guestTeam = getTheTeam(team2);
+            boolean hostTeamAvailability = hostTeam.checkAvailability(time);
+            boolean guestTeamAvailability = guestTeam.checkAvailability(time);
+            if (!hostTeamAvailability || !guestTeamAvailability){
+                System.out.println("One of the teams doesn't available in this date");
+                return false;
+            }
+            else {
+                newGame.setTime(time);
+                newGame.setField(place);
+                // send update Game object to DB
+                gameDAO.update(newGame);
+                logger.toLog("DC - Game assigned successfully");
+                System.out.println("Game assigned successfully");
+                return true;
+            }
+        }
+    }
+
+        //create  Team 1 from DB
+        //create Team 2 from DB
+        //create Game with 2 teams
+        //check availability of Team 1 in specific date (by list DatesOfGames) from DB
+        //check availability of Team 2 in specific date (by list DatesOfGames) from DB
+        //if true, set values of date, time, Team 1, Team 2, place on Game object
+        //send update Game object to DB
+
+
+
+    }
+
 //        Date dateOfBirth = new Date();
 //        Player player0 = new Player("player0","player0", "player0", "player0", "player0@gmail.com", dateOfBirth, "player");
 //        Player player1 = new Player("player1","player1", "player1", "player1", "player1@gmail.com", dateOfBirth, "player");
@@ -183,17 +262,3 @@ public class DomainController {
 //        //update DB with game, team1 team2
 //
 //
-//        //get game from DB - with game id - and check if exist
-//        //create  Team 1 from DB
-//        //create Team 2 from DB
-//        //create Game with 2 teams
-//        //check availability of Team 1 in specific date (by list DatesOfGames) from DB
-//        //check availability of Team 2 in specific date (by list DatesOfGames) from DB
-//        //if true, set values of date, time, Team 1, Team 2, place on Game object
-//        //send update Game object to DB
-//
-//        return true;
-//
-//
-//    }
-}

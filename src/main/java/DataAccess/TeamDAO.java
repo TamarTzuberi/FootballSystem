@@ -4,6 +4,9 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+
 import static com.mongodb.client.model.Filters.eq;
 
 public class TeamDAO implements DAO{
@@ -31,4 +34,9 @@ public class TeamDAO implements DAO{
         Document  d = (Document) collection.find(eq("_id", id)).first();
         return d;
     }
+
+//    public ArrayList<LocalDateTime> getDatesOfGame(String teamID){
+//        ArrayList<LocalDateTime> arr = new ArrayList<>();
+//        return arr;
+//    }
 }
