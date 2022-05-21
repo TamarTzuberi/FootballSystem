@@ -59,8 +59,6 @@ public class Team {
             this.name = name;
         else
             throw new NullPointerException("name argument is Null");
-
-
     }
 
     public ArrayList<String> getPlayers() {

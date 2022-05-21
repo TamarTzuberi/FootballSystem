@@ -10,7 +10,7 @@ import java.util.Date;
 public class DomainController {
 
     private static DomainController DC;
-    private User connectedUser;
+    private Subscriber connectedUser;
     private static DataAccess.SubscriberDAO subscriberDAO;
 
     private DomainController()
@@ -27,7 +27,7 @@ public class DomainController {
         return DC;
     }
 
-    public void setConnectedUser(User curUser) {
+    public void setConnectedUser(Subscriber curUser) {
 //        DomainController.connectedUser = *****get from DB ;
         connectedUser = curUser;
     }
@@ -57,14 +57,35 @@ public class DomainController {
             Document subscriber = subscriberDAO.get(userId);
 
             //get User details from DB
-            User curUser = getTheUser(subscriber);
-            setConnectedUser(curUser);
+            Subscriber curUser = getTheUser(subscriber);
+            if(curUser.getPassword().equals(password))
+            {
+                setConnectedUser(curUser);
+                return true;
+            }
+            else
+            {
+                System.out.println("Incorrect Password");
+                return false;
+            }
         }
         //connected user
 //        return userExists;
+    }
+    public boolean checkIfStrExists(String fieldType, String str)
+    {
+//        String userId = "";
+//        Document subscriber = subscriberDAO.get(userId);
+//        Document subscriberDetails = (Document) subscriber.get("subscriber");
+        //loop over all subscribers
+//        String getStr = (String)subscriberDetails.get(fieldType);
+//        return !getStr.equals(""); //???
+        return false;
+    }
 
-
-        return true;
+    public boolean checkIfRepresentative()
+    {
+        return (connectedUser.getType().equals("Representative"));
     }
 
     public Subscriber getTheUser(Document subscriber)
@@ -74,26 +95,31 @@ public class DomainController {
         String name = (String)subscriberDetails.get("name");
         String password = (String)subscriberDetails.get("password");
         String email = (String)subscriberDetails.get("email");
-        return (new Subscriber(name,userName,password,email));
+//        String type = (String)subscriberDetails.get("type");
+//        return (new Subscriber(name,userName,password,email));
+        return null;
     }
-
-
 
     public boolean registerReferee(String fullName, String email, String training)
     {
         if (checkFullName(fullName)) {
             if (checkEmail(email)) {
                 //if() ****check in DB if email exist**** in data layer
-
-                String[] splitName = fullName.split(" ");
-                String username = splitName[0] + splitName[1].charAt(0);
-                String password = username + "Referee";
-                Referee newReferee = new Referee(fullName, username, password, email, training);
-                //add to DB - send string - username:Stav, password:pass, Name:Stav Keidar ***send id from getID
-                //send mail to referee
-                //write in log
-                System.out.println("register successful");
-                return true;
+                if(checkIfStrExists("email",email)) {
+                    System.out.println("User already exists");
+                    return false;
+                }
+                else {
+                    String[] splitName = fullName.split(" ");
+                    String username = splitName[0] + splitName[1].charAt(0);
+                    String password = "Rr" + username;
+                    Referee newReferee = new Referee(fullName, username, password, email, training);
+                    //add to DB - send string - username:Stav, password:pass, Name:Stav Keidar ***send id from getID
+                    //send mail to referee
+                    //write in log
+                    System.out.println("register successful");
+                    return true;
+                }
             }
             else
                 return false;

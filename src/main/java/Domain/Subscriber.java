@@ -2,15 +2,19 @@ package Domain;
 
 public class Subscriber extends User{
 
+    private String ID;
     private String userName;
     private String password;
     private String email;
+    private String type;
 
-    public Subscriber(String name, String userName, String password, String email) {
+    //add type to constructor
+    public Subscriber(String ID, String name, String userName, String password, String email) {
         super(name);
         if (name == null || userName == null || password == null || email == null) {
             throw new NullPointerException("One or more of the arguments are Null");
         }
+        this.ID = ID;
         this.userName = userName;
         this.password = password;
         this.email = email;
@@ -18,6 +22,10 @@ public class Subscriber extends User{
 
     public String getUserName() {
         return userName;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public void setUserName(String userName) {

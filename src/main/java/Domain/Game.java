@@ -7,17 +7,17 @@ public class Game {
 
     private String gameId;
     private LocalDateTime time;
-    private Team hostTeam;
-    private Team guestTeam;
+    private String hostTeamID;
+    private String guestTeamID;
     private String field;
     private int hostScore;
     private int guestScore;
     private EventCalender calender;
 
-    public Game(String id, Team hostTeam, Team guestTeam) {
+    public Game(String id, String hostTeam, String guestTeam) {
 //        this.time = time;
-        this.hostTeam = hostTeam;
-        this.guestTeam = guestTeam;
+        this.hostTeamID = hostTeam;
+        this.guestTeamID = guestTeam;
 //        this.field = field;
 //        this.hostScore = hostScore;
 //        this.guestScore = guestScore;
@@ -43,20 +43,12 @@ public class Game {
         this.time = time;
     }
 
-    public Team getHostTeam() {
-        return hostTeam;
+    public String getHostTeamID() {
+        return hostTeamID;
     }
 
-    public void setHostTeam(Team hostTeam) {
-        this.hostTeam = hostTeam;
-    }
-
-    public Team getGuestTeam() {
-        return guestTeam;
-    }
-
-    public void setGuestTeam(Team guestTeam) {
-        this.guestTeam = guestTeam;
+    public String getGuestTeamID() {
+        return guestTeamID;
     }
 
     public String getField() {
