@@ -13,7 +13,7 @@ public class ServiceController {
     private ServiceController(){
     }
 
-    private static ServiceController getInstance(){
+    public static ServiceController getInstance(){
         if (SC == null){
             SC = new ServiceController();
         }

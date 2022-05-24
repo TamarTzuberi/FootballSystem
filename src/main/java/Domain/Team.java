@@ -47,7 +47,7 @@ public class Team {
 
     public boolean checkAvailability(LocalDateTime time)
     {
-        if ( time != null)
+        if ( time != null )
             return !this.datesOfGames.contains(time);
         else
             throw new NullPointerException("time argument is Null");
