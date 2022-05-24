@@ -11,6 +11,7 @@ import org.bson.Document;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
 
 import javax.print.Doc;
 
@@ -45,9 +46,11 @@ public class DomainAndData {
         {
         }
     }
-    @After
+    @AfterAll
     public void cleanData(){
         subscriberDAO.clearCollection();
+        gameDAO.clearCollection();
+        teamDAO.clearCollection();
     }
 
     @Test
@@ -89,8 +92,8 @@ public class DomainAndData {
         LocalDateTime localDateTime0 = LocalDateTime.of(2022, 04, 24, 14, 33, 48, 123456789);
         domainController.gamePlacement("game0",localDateTime0,"Tedi");
         Document d = gameDAO.get("game0");
-        Document sub = (Document)d.get("games");
-        String placeDB = (String) sub.get("place");
-        assertEquals("The place of the game didn't save properly in the DB","basic",placeDB);
+        Document sub = (Document)d.get("game");
+        String placeDB = (String) sub.get("field");
+        assertEquals("The place of the game didn't save properly in the DB","Tedi",placeDB);
     }
 }
