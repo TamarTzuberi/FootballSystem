@@ -89,4 +89,6 @@ public class SubscriberDAO implements DAO {
         }
     }
 
+    public void clearCollection() {
+    }
 }
