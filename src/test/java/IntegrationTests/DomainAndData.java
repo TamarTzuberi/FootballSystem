@@ -11,6 +11,7 @@ import org.bson.Document;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
 
 import javax.print.Doc;
 
@@ -45,9 +46,11 @@ public class DomainAndData {
         {
         }
     }
-    @After
+    @AfterAll
     public void cleanData(){
         subscriberDAO.clearCollection();
+        gameDAO.clearCollection();
+        teamDAO.clearCollection();
     }
 
     @Test
