@@ -107,6 +107,15 @@ public class DomainController {
                 else {
                     String[] splitName = fullName.split(" ");
                     String username = splitName[0] + splitName[1].charAt(0);
+                    String usernameTemp = username;
+                    boolean isExist = subscriberDAO.checkIfSubscriberExists("userName", username);
+                    int counter = 0;
+                    while (isExist){
+                        usernameTemp = username + counter;
+                        isExist = subscriberDAO.checkIfSubscriberExists("userName", usernameTemp);
+                        counter++;
+                    }
+                    username = usernameTemp;
                     String password = "Rr" + username;
                     if (checkPassword(password)) {
                         Referee newReferee = new Referee(fullName, username, password, email, training);
@@ -119,6 +128,7 @@ public class DomainController {
                         logger.toLog("Invalid password");
                         return false;
                     }
+
                 }
             }
             else
