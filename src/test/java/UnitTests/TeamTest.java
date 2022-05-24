@@ -3,6 +3,7 @@ package UnitTests;
 import DataAccess.GameDAO;
 import DataAccess.SubscriberDAO;
 import DataAccess.TeamDAO;
+import Domain.Subscriber;
 import Domain.Team;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -15,7 +16,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TeamTest {
 
-
+    @Test
+    void teamConstructorNullValue(){
+        try {
+            Team t = new Team(null,"Hapoel Haifa");
+            fail("Should have thrown exception");
+        } catch (Exception e) {
+            assertEquals(NullPointerException.class, e.getClass());
+        }
+    }
 
     @Test
     void addGameTimeWithValidTime() {
@@ -52,9 +61,14 @@ class TeamTest {
     }
 
     @Test
-    void setTeamId() {
-        Team t = new Team("team0","Hapoel Haifa");
-        t.setTeamId("team2");
-        assertEquals("team2",t.getTeamId());
+    void setNameNull() {
+        try {
+            Team t = new Team("team0", "Hapoel Haifa");
+            t.setName(null);
+            fail("Should have thrown exception");
+        } catch (Exception e) {
+            assertEquals(NullPointerException.class, e.getClass());
+        }
     }
+
 }

@@ -16,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
 
+
     @Test
     void setTimeWithValidTime() {
         Game g = new Game("game0","team0","team1");

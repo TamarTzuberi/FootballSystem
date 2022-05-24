@@ -43,19 +43,9 @@ class SubscriberTest {
         }
     }
 
-    @Test
-    void setEmailWithNull(){
-        try {
-            Subscriber s = new Subscriber("subscriber0","bob","userBob","Bob123!","bob@gmail.com","Subscriber");
-            s.setEmail(null);
-            fail("Should have thrown exception");
-        } catch (Exception e) {
-            assertEquals(NullPointerException.class, e.getClass());
-        }
-    }
 
     @Test
-    void checkConstructor(){
+    void subscriberConstructorNullValue(){
         try {
             Subscriber s = new Subscriber("subscriber0",null,"userBob","Bob123!","bob@gmail.com","Subscriber");
             fail("Should have thrown exception");

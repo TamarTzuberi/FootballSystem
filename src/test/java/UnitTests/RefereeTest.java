@@ -24,7 +24,7 @@ class RefereeTest {
         }
     }
     @Test
-    void checkConstructor(){
+    void refereeConstructorNullValue(){
         try {
             Referee r = new Referee(null,"userBob","Bob123!","bob@gmail.com","basic");
             fail("Should have thrown exception");

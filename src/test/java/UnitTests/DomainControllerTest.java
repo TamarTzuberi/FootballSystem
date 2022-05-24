@@ -13,9 +13,9 @@ class DomainControllerTest {
     @Test
     void setConnectedUser() {
         DomainController DC = DomainController.getInstance();
-        Subscriber s = new Subscriber("subscriber0","bob","userBob","Bob123!","bob@gmail.com","Subscriber");
-        DC.setConnectedUser(s);
-        assertEquals(DC.getConnectedUser(),s);
+        FootballAssociationRepresentative representative = new FootballAssociationRepresentative("rep0","Tamar","TamarUser","Tamar123!","tamar@gmail.com");
+        DC.setConnectedUser(representative);
+        assertEquals(DC.getConnectedUser(),representative);
     }
 
     @Test
@@ -53,6 +53,11 @@ class DomainControllerTest {
 
     @Test
     void gamePlacement() {
+
+    }
+
+    @Test
+    void login() {
 
     }
 }
