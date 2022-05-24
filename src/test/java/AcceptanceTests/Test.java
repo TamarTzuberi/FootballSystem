@@ -8,8 +8,8 @@ import Domain.Game;
 import Domain.Subscriber;
 import Domain.Team;
 import Service.ServiceController;
-import org.junit.After;
-import org.junit.Before;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.jupiter.api.DisplayName;
 
 import java.time.LocalDateTime;
@@ -19,25 +19,33 @@ import static org.junit.Assert.assertTrue;
 
 public class Test {
     private ServiceController SC = ServiceController.getInstance();
-    private GameDAO gameDAO = GameDAO.getInstance();
-    private SubscriberDAO subscriberDAO = SubscriberDAO.getInstance();
-    private TeamDAO teamDAO = TeamDAO.getInstance();
+    private static GameDAO gameDAO = GameDAO.getInstance();
+    private static SubscriberDAO subscriberDAO = SubscriberDAO.getInstance();
+    private static TeamDAO teamDAO = TeamDAO.getInstance();
 
-    @Before
-    public void initialize(){
+    @BeforeClass
+    public static void initialize(){
         try{
+            subscriberDAO.clearCollection();
+            gameDAO.clearCollection();
+            teamDAO.clearCollection();
             FootballAssociationRepresentative rep1 = new FootballAssociationRepresentative("1", "Navit Branin", "navitb", "navitb123!", "navitb@post.bgu.ac.il");
             subscriberDAO.save(rep1.getID(), rep1);
             Subscriber subscriber = new Subscriber("2", "Dana Hohenstein", "danah", "danah123!", "danah@post.bgu.ac.il", "Subscriber");
             subscriberDAO.save(subscriber.getID(), subscriber);
-            Game game = new Game("game1", "team1", "team2");
-            Team hostTeam = new Team("team1", "Maccabi Haifa");
-            Team guestTeam = new Team("team2", "Hapoel Tel-Aviv");
-            gameDAO.save("game1", game);
-            teamDAO.save("team1", hostTeam);
-            teamDAO.save("team2", guestTeam);
+            Game game1 = new Game("game1", "team1", "team2");
+            Game game2 = new Game("game2", "team1", "team3");
+            Game game3 = new Game("game3", "team2", "team3");
+            Team hostTeam1 = new Team("team1", "Maccabi Haifa");
+            Team guestTeam1 = new Team("team2", "Hapoel Tel-Aviv");
+            Team guestTeam2 = new Team("team3", "Hapoel Beer Sheba");
+            gameDAO.save("game1", game1);
+            gameDAO.save("game2", game2);
+            gameDAO.save("game3", game3);
+            teamDAO.save("team1", hostTeam1);
+            teamDAO.save("team2", guestTeam1);
+            teamDAO.save("team3", guestTeam2);
         } catch (Exception e){
-            System.out.println("hi");
         }
     }
 
@@ -54,16 +62,56 @@ public class Test {
     }
 
     @org.junit.Test
-    @DisplayName("Test flow false")
-    public void testFlowFalse(){
+    @DisplayName("No permission to register")
+    public void noPermissionToReg(){
         boolean successLogin = SC.login("danah", "danah123!");
         assertTrue("couldn't login successfully",successLogin);
         boolean unsuccessRegister = SC.registerReferee("Dana Hohenstein", "danah@post.bgu.ac.il", "basic");
-        assertFalse("no permission to register", unsuccessRegister);
+        assertFalse("expectation no register because there no permission", unsuccessRegister);
     }
 
-    @After
-    public void endAAcceptanceTests(){
+    @org.junit.Test
+    @DisplayName("referee already exist")
+    public void refereeAlreadyExist(){
+        boolean successLogin = SC.login("navitb", "navitb123!");
+        assertTrue("couldn't login successfully",successLogin);
+        boolean unsuccessRegister = SC.registerReferee("Stav Keidar", "stavk@post.bgu.ac.il", "basic");
+        assertFalse("expectation no register because referee already exist", unsuccessRegister);
+    }
+
+    @org.junit.Test
+    @DisplayName("team unavailable in specific date")
+    public void teamUnavailable() {
+        boolean successLogin = SC.login("navitb", "navitb123!");
+        assertTrue("couldn't login successfully", successLogin);
+        LocalDateTime localDateTime1 = LocalDateTime.of(2021, 04, 24, 14, 33, 48, 123456789);
+        boolean unsuccessGamePlacement = SC.gamePlacement("game2", localDateTime1, "Teddy stadium");
+        assertFalse("expectation no placement because date is unavailable", unsuccessGamePlacement);
+    }
+
+    @org.junit.Test
+    public void noPermissionToPlace(){
+        boolean successLogin = SC.login("danah", "danah123!");
+        assertTrue("couldn't login successfully",successLogin);
+        LocalDateTime localDateTime2 = LocalDateTime.of(2021, 05, 24, 14, 33, 48, 123456789);
+        boolean unsuccessGamePlacement = SC.gamePlacement("game3", localDateTime2, "Teddy stadium");
+        assertFalse("expectation no placement because no permission", unsuccessGamePlacement);
+    }
+
+    @org.junit.Test
+    public void userNotExist(){
+        boolean unsuccessLogin = SC.login("tamart", "tamar123!");
+        assertFalse("expectation no login because user not exist",unsuccessLogin);
+    }
+
+    @org.junit.Test
+    public void incorrectPassword(){
+        boolean unsuccessLogin = SC.login("danah", "dana123");
+        assertFalse("expectation no login because incorrect password",unsuccessLogin);
+    }
+
+    @AfterClass
+    public static void endAcceptanceTests(){
         subscriberDAO.clearCollection();
         gameDAO.clearCollection();
         teamDAO.clearCollection();
