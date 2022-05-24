@@ -72,5 +72,10 @@ public class GameDAO implements DAO {
             return false;
         }
     }
+    public void clearCollection() {
+        MongoCollection collection = database.getCollection("games");
+        collection.drop();
+    }
+
 
 }
