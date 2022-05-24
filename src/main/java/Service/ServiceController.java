@@ -63,7 +63,7 @@ public class ServiceController {
             }
             else
             {
-                logger.toLog("SC - The current user has no permission");
+                logger.toLog("SC - The current user " + DC.getCurUserName() + " has no permission");
                 return false;
             }
         } catch (Exception e) {

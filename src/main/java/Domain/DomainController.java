@@ -72,7 +72,7 @@ public class DomainController {
             }
             else
             {
-                logger.toLog("DC - user " + username + " incorrect Password");
+                logger.toLog("DC - user " + username + " incorrect password");
                 return false;
             }
         }
@@ -221,5 +221,9 @@ public class DomainController {
             logger.toLog("DC - game " + gameID + " already exist");
             return false;
         }
+    }
+
+    public String getCurUserName() {
+        return this.connectedUser.getUserName();
     }
 }
