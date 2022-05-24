@@ -59,6 +59,11 @@ public class TeamDAO implements DAO{
             return false;
         }
     }
+    public void clearCollection() {
+        MongoCollection collection = database.getCollection("teams");
+        collection.drop();
+    }
+
 
 //    public ArrayList<LocalDateTime> getDatesOfGame(String teamID){
 //        ArrayList<LocalDateTime> arr = new ArrayList<>();

@@ -1,5 +1,6 @@
 package DataAccess;
 
+import com.mongodb.DBCursor;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -24,7 +25,7 @@ public class SubscriberDAO implements DAO {
     }
 
     public static void main(String[] args) {
-        System.out.println(getInstance().getIdByUsername("userBob"));
+        getInstance().clearCollection();
 
 
     }
@@ -88,5 +89,11 @@ public class SubscriberDAO implements DAO {
             return null;
         }
     }
+
+    public void clearCollection() {
+        MongoCollection collection = database.getCollection("subscribers");
+        collection.drop();
+        }
+
 
 }
