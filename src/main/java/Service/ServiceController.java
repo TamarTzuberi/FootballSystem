@@ -13,7 +13,7 @@ public class ServiceController {
     private ServiceController(){
     }
 
-    private static ServiceController getInstance(){
+    public static ServiceController getInstance(){
         if (SC == null){
             SC = new ServiceController();
         }
@@ -41,9 +41,9 @@ public class ServiceController {
             }
     }
 
-    public boolean registerReferee(String repUsername, String repPass, String fullName, String email, String training)
+    public boolean registerReferee(String fullName, String email, String training)
     {
-        if (repUsername == null || repPass == null || fullName == null || email == null || training == null){
+        if (fullName == null || email == null || training == null){
             return false;
         }
         try{

@@ -61,7 +61,7 @@ public class GameDAO implements DAO {
             {
                 Document d = results.get(i);
                 Document gameD =(Document)d.get("game");
-                String  valFromDoc = (String)gameD.get(key);
+                String valFromDoc = (String)gameD.get(key);
                 if(valFromDoc.equals(value))
                     return true;
             }
@@ -75,6 +75,11 @@ public class GameDAO implements DAO {
     public void clearCollection() {
         MongoCollection collection = database.getCollection("games");
         collection.drop();
+    }
+
+    // TODO - Tamar
+    public void clearObject(String gameId){
+
     }
 
 
