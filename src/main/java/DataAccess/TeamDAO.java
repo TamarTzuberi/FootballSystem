@@ -3,7 +3,9 @@ package DataAccess;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 import org.bson.Document;
+import org.bson.conversions.Bson;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -37,6 +39,13 @@ public class TeamDAO implements DAO{
         return d;
     }
 
+    public void update(String id,Object game){
+        MongoCollection collection=database.getCollection("teams");
+        Bson globalFilter = Filters.eq("_id", id);
+        Document newTeam = new Document("team",game);
+        collection.replaceOne(globalFilter,newTeam);
+    }
+
     public boolean checkIfTeamExists(String key, String value)
     {
         try{
@@ -62,6 +71,11 @@ public class TeamDAO implements DAO{
     public void clearCollection() {
         MongoCollection collection = database.getCollection("teams");
         collection.drop();
+    }
+
+    // TODO - Tamar
+    public void clearObject(String teamId){
+
     }
 
 

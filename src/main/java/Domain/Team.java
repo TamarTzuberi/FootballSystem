@@ -7,9 +7,9 @@ public class Team {
 
     private String teamId;
     private String name;
-    //    private ArrayList<String> playersId;
-//    private ArrayList<String> coachesId;
-//    private ArrayList<String> teamOwnersId;
+    private ArrayList<String> playersId;
+    private ArrayList<String> coachesId;
+    private ArrayList<String> teamOwnersId;
     private ArrayList<LocalDateTime> datesOfGames;
 
     public Team(String id, String name) {
@@ -17,10 +17,10 @@ public class Team {
             throw new NullPointerException("One or more of the arguments are Null");
         }
         this.name = name;
-//        this.playersId = playersId;
-//        this.coachesId = coachesId;
-//        this.teamOwnersId = teamOwnersId;
-        this.datesOfGames = new ArrayList<>();
+        this.playersId = new ArrayList<String>();
+        this.coachesId = new ArrayList<String>();
+        this.teamOwnersId = new ArrayList<String>();
+        this.datesOfGames = new ArrayList<LocalDateTime>();
         this.teamId = id;
     }
 
@@ -64,4 +64,32 @@ public class Team {
             throw new NullPointerException("name argument is Null");
     }
 
+
+    public void setTeamId(String teamId) {
+        this.teamId = teamId;
+    }
+
+    public ArrayList<String> getPlayersId() {
+        return playersId;
+    }
+
+    public void setPlayersId(ArrayList<String> playersId) {
+        this.playersId = playersId;
+    }
+
+    public ArrayList<String> getCoachesId() {
+        return coachesId;
+    }
+
+    public void setCoachesId(ArrayList<String> coachesId) {
+        this.coachesId = coachesId;
+    }
+
+    public ArrayList<String> getTeamOwnersId() {
+        return teamOwnersId;
+    }
+
+    public void setTeamOwnersId(ArrayList<String> teamOwnersId) {
+        this.teamOwnersId = teamOwnersId;
+    }
 }
