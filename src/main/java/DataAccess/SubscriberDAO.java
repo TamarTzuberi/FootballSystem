@@ -95,9 +95,5 @@ public class SubscriberDAO implements DAO {
         collection.drop();
         }
 
-    // TODO - Tamar
-    public void clearObject(String subscriberId){
-
-    }
 
 }

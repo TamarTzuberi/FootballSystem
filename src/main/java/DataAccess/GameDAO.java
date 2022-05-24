@@ -77,10 +77,7 @@ public class GameDAO implements DAO {
         collection.drop();
     }
 
-    // TODO - Tamar
-    public void clearObject(String gameId){
 
-    }
 
 
 }
