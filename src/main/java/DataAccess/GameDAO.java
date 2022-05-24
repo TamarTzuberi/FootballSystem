@@ -1,6 +1,5 @@
 package DataAccess;
 
-import Domain.Game;
 import Domain.Subscriber;
 import Domain.User;
 import com.mongodb.client.FindIterable;

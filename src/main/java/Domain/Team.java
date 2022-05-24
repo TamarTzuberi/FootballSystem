@@ -42,7 +42,10 @@ public class Team {
     }
 
     public void setDatesOfGames(ArrayList<LocalDateTime> datesOfGames) {
-        this.datesOfGames = datesOfGames;
+        if(datesOfGames != null)
+            this.datesOfGames = datesOfGames;
+        else
+            throw new NullPointerException("datesOfGames argument is Null");
     }
 
     public boolean checkAvailability(LocalDateTime time)
@@ -66,30 +69,10 @@ public class Team {
 
 
     public void setTeamId(String teamId) {
-        this.teamId = teamId;
+        if( teamId != null)
+            this.teamId = teamId;
+        else
+            throw new NullPointerException("teamId argument is Null");
     }
 
-    public ArrayList<String> getPlayersId() {
-        return playersId;
-    }
-
-    public void setPlayersId(ArrayList<String> playersId) {
-        this.playersId = playersId;
-    }
-
-    public ArrayList<String> getCoachesId() {
-        return coachesId;
-    }
-
-    public void setCoachesId(ArrayList<String> coachesId) {
-        this.coachesId = coachesId;
-    }
-
-    public ArrayList<String> getTeamOwnersId() {
-        return teamOwnersId;
-    }
-
-    public void setTeamOwnersId(ArrayList<String> teamOwnersId) {
-        this.teamOwnersId = teamOwnersId;
-    }
 }

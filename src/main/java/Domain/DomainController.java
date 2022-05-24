@@ -32,7 +32,15 @@ public class DomainController {
     }
 
     public void setConnectedUser(Subscriber curUser) {
-        connectedUser = curUser;
+        if(curUser != null)
+            connectedUser = curUser;
+        else
+            throw new NullPointerException("curUser argument is Null");
+    }
+
+    public Subscriber getConnectedUser()
+    {
+        return connectedUser;
     }
 
     private static boolean checkFullName(String fullName) {

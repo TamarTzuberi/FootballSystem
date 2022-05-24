@@ -23,7 +23,8 @@ public class Referee extends Subscriber{
     public void setTraining(String training) {
         if (training != null )
             this.training = training;
-        throw new NullPointerException("training argument is Null");
+        else
+            throw new NullPointerException("training argument is Null");
 
     }
 

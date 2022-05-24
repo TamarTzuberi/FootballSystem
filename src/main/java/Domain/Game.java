@@ -12,30 +12,27 @@ public class Game {
     private String field;
     private int hostScore;
     private int guestScore;
-    private EventCalender calender;
 
     public Game(String id, String hostTeamId, String guestTeamId) {
+        if (id == null || hostTeamId == null || guestTeamId == null) {
+            throw new NullPointerException("One or more of the arguments are Null");
+        }
         this.hostTeamID = hostTeamId;
         this.guestTeamID = guestTeamId;
         this.ID = id;
     }
 
-    public String getGameId() {
-        return ID;
-    }
-
-    public void gamePlacement(LocalDateTime time, String place)
-    {
-        this.field = place;
-        this.time = time;
-    }
 
     public LocalDateTime getTime() {
         return time;
     }
 
     public void setTime(LocalDateTime time) {
-        this.time = time;
+        if ( time!= null)
+            this.time = time;
+        else
+            throw new NullPointerException("time is Null");
+
     }
 
     public String getHostTeamID() {
@@ -51,30 +48,10 @@ public class Game {
     }
 
     public void setField(String field) {
-        this.field = field;
+        if ( field!= null)
+            this.field = field;
+        else
+            throw new NullPointerException("field is Null");
     }
 
-    public int getHostScore() {
-        return hostScore;
-    }
-
-    public void setHostScore(int hostScore) {
-        this.hostScore = hostScore;
-    }
-
-    public int getGuestScore() {
-        return guestScore;
-    }
-
-    public void setGuestScore(int guestScore) {
-        this.guestScore = guestScore;
-    }
-
-    public EventCalender getCalender() {
-        return calender;
-    }
-
-    public void setCalender(EventCalender calender) {
-        this.calender = calender;
-    }
 }
