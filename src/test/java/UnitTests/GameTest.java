@@ -15,18 +15,6 @@ import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
-    private DomainController domainController;
-
-    @Before
-    public void initialize() {
-        domainController = DomainController.getInstance();
-
-        try {
-
-        } catch (Exception e) {
-        }
-    }
-
 
     @Test
     void setTimeWithValidTime() {
