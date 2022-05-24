@@ -64,25 +64,14 @@ public class DomainController {
             }
             else
             {
-                System.out.println("Incorrect Password");
+                logger.toLog("DC - user " + username + " incorrect Password");
                 return false;
             }
         }
-        System.out.println("Username not exist");
-        return false;
-        //connected user
-//        return userExists;
-    }
-    public boolean checkIfStrExists(String fieldType, String str)
-    {
-//        String userId = "";
-//        Document subscriber = subscriberDAO.get(userId);
-//        Document subscriberDetails = (Document) subscriber.get("subscriber");
-        //loop over all subscribers
-//        String getStr = (String)subscriberDetails.get(fieldType);
-//        return !getStr.equals(""); //???
+        logger.toLog("DC - username " + username + " not exist");
         return false;
     }
+
 
     public boolean checkIfRepresentative()
     {
@@ -92,23 +81,21 @@ public class DomainController {
     public Subscriber getTheUser(Document subscriber)
     {
         Document subscriberDetails = (Document) subscriber.get("subscriber");
-        String userName = (String)subscriberDetails.get("userName");
+        String id = (String)subscriberDetails.get("ID");
         String name = (String)subscriberDetails.get("name");
+        String userName = (String)subscriberDetails.get("userName");
         String password = (String)subscriberDetails.get("password");
         String email = (String)subscriberDetails.get("email");
-//        String type = (String)subscriberDetails.get("type");
-//        return (new Subscriber(name,userName,password,email));
-        return null;
+        String type = (String)subscriberDetails.get("type");
+        return (new Subscriber(id, name, userName, password, email, type));
     }
 
-    public boolean registerReferee(String id, String fullName, String email, String training)
+    public boolean registerReferee(String fullName, String email, String training)
     {
         if (checkFullName(fullName)) {
             if (checkEmail(email)) {
-                //if() ****check in DB if email exist**** in data layer
-                // check mail exist in generic function
-                if(checkIfStrExists("email",email)) {
-                    System.out.println("User already exists");
+                if(subscriberDAO.checkIfSubscriberExists("email",email)) {
+                    logger.toLog("email " + email + " already exist");
                     return false;
                 }
                 else {
@@ -116,11 +103,9 @@ public class DomainController {
                     String username = splitName[0] + splitName[1].charAt(0);
                     String password = "Rr" + username;
                     Referee newReferee = new Referee(fullName, username, password, email, training);
-                    //add to DB - send string - username:Stav, password:pass, Name:Stav Keidar ***send id from getID
-                    //send mail to referee
-                    //write in log
-                    logger.toLog("DC - Referee registered successfully");
-                    System.out.println("register successful");
+                    subscriberDAO.save(newReferee.getID(),newReferee);
+                    logger.toLog("DC - Mail with details sent to mail " + email);
+                    logger.toLog("DC - Referee " + fullName + " registered successfully");
                     return true;
                 }
             }
