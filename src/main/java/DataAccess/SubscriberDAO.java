@@ -30,6 +30,7 @@ public class SubscriberDAO implements DAO {
     }
 
     public static void main(String[] args) {
+        System.out.println(getInstance().getIdByUsername("userBob"));
 
 
     }
@@ -84,7 +85,7 @@ public class SubscriberDAO implements DAO {
                 Document subscriberD =(Document)d.get("subscriber");
                 String  valFromDoc = (String)subscriberD.get("userName");
                 if(valFromDoc.equals(username))
-                    return (String)subscriberD.get("_id");
+                    return (String)d.get("_id");
             }
             return null;
         }
