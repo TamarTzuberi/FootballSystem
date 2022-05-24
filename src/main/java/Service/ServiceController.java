@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 
 public class ServiceController {
     private static ServiceController SC;
+    private static DomainController DC = DomainController.getInstance();
     private static Logger logger = Logger.getInstance("logs");
 
     private ServiceController(){
@@ -25,40 +26,48 @@ public class ServiceController {
             return false;
         }
             try{
-                DomainController dc = DomainController.getDC();
-                dc.login(username, password);
-                return true;
+                boolean success = DC.login(username, password);
+                logger.toLog("User logged in successfully");
+                if (success){
+                    return true;
+                }
+                else{
+                    logger.toLog("SC - Login didn't success");
+                    return false;
+                }
             } catch (Exception e) {
-                logger.toLog("SC - Login not succeeded");
-                System.out.println("Login not succeeded");
+                logger.toLog("SC - Login didn't success");
                 return false;
             }
     }
 
-    public boolean registerReferee(String id, String repUsername, String repPass, String fullName, String email, String training)
+    public boolean registerReferee(String repUsername, String repPass, String fullName, String email, String training)
     {
-        if (id == null || repUsername == null || repPass == null || fullName == null || email == null || training == null){
+        if (repUsername == null || repPass == null || fullName == null || email == null || training == null){
             return false;
         }
         try{
-            DomainController dc = DomainController.getDC();
-            boolean ifUserExist = dc.login(repUsername, repPass);
-            boolean ifRep = dc.checkIfRepresentative();
+            // Assuming a login has been preformed before
+            boolean ifRep = DC.checkIfRepresentative();
             if(ifRep)
             {
-                boolean success = dc.registerReferee(fullName, email, training);
-                logger.toLog("SC - Referee registered successfully");
-                return true;
+                boolean registerSuccess = DC.registerReferee(fullName, email, training);
+                if (registerSuccess){
+                    logger.toLog("SC - Referee registered successfully");
+                    return true;
+                }
+                else{
+                    logger.toLog("SC - Registered referee didn't success");
+                    return false;
+                }
             }
             else
             {
                 logger.toLog("SC - The current user has no permission");
-                System.out.println("no permission");
                 return false;
             }
         } catch (Exception e) {
-            logger.toLog("SC - Register not succeeded");
-            System.out.println("Register not succeeded");
+            logger.toLog("SC - Register " + fullName + " didn't success");
             return false;
         }
     }
@@ -70,23 +79,27 @@ public class ServiceController {
             return false;
         }
         try {
-            DomainController dc = DomainController.getDC();
-            boolean ifRep = dc.checkIfRepresentative();
+            // Assuming a login has been preformed before
+            boolean ifRep = DC.checkIfRepresentative();
             if(ifRep)
             {
-                boolean success = dc.gamePlacement(gameId, time, place);
-                logger.toLog("SC - Game placement successfully");
-                return true;
+                boolean success = DC.gamePlacement(gameId, time, place);
+                if (success){
+                    logger.toLog("SC - Game placement successfully");
+                    return true;
+                }
+                else{
+                    logger.toLog("SC - Game placement didn't success");
+                    return false;
+                }
             }
             else
             {
                 logger.toLog("SC - The current user has no permission");
-                System.out.println("no permission");
                 return false;
             }
         } catch (Exception e) {
-            logger.toLog("SC - Game placement not succeeded");
-            System.out.println("Game placement not succeeded");
+            logger.toLog("SC - Game placement didn't success");
             return false;
         }
     }
