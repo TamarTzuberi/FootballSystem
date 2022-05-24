@@ -47,7 +47,7 @@ public class DomainController {
     public boolean login(String username, String password)
     {
         //check if username exist in DB
-        boolean userExists = subscriberDAO.checkIfSubscriberExists(username);
+        boolean userExists = subscriberDAO.checkIfSubscriberExists("userName",username);
         if(userExists)
         {
             String userId = subscriberDAO.getIdByUsername(username);

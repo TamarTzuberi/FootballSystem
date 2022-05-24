@@ -2,10 +2,17 @@ package DataAccess;
 
 import Domain.Subscriber;
 import Domain.User;
+import com.mongodb.Cursor;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.bson.types.ObjectId;
+
+import javax.print.Doc;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
 
@@ -23,7 +30,7 @@ public class SubscriberDAO implements DAO {
     }
 
     public static void main(String[] args) {
-//        System.out.println(getInstance().checkIfSubscriberExists("userBob"));
+
 
     }
 
@@ -41,13 +48,22 @@ public class SubscriberDAO implements DAO {
         return d;
     }
 
-    // TODO - Tamar - create generic function that check existence user by key and value
-    public boolean checkIfSubscriberExists(String userName)
+    public boolean checkIfSubscriberExists(String key, String value)
     {
         try{
             MongoCollection collection=database.getCollection("subscribers");
-            Document  d = (Document) collection.find(eq("_id", "1")).first();
-            return true;
+            List<Document> results = new ArrayList<>();
+            FindIterable<Document> iterable = collection.find();
+            iterable.into(results);
+            for(int i=0; i<results.size();i++)
+            {
+                Document d = results.get(i);
+                Document subscriberD =(Document)d.get("subscriber");
+                String  valFromDoc = (String)subscriberD.get(key);
+                if(valFromDoc.equals(value))
+                    return true;
+            }
+        return false;
         }
         catch (Exception e)
         {
@@ -57,7 +73,25 @@ public class SubscriberDAO implements DAO {
 
     public String getIdByUsername(String username)
     {
-        return "3";
+        try{
+            MongoCollection collection=database.getCollection("subscribers");
+            List<Document> results = new ArrayList<>();
+            FindIterable<Document> iterable = collection.find();
+            iterable.into(results);
+            for(int i=0; i<results.size();i++)
+            {
+                Document d = results.get(i);
+                Document subscriberD =(Document)d.get("subscriber");
+                String  valFromDoc = (String)subscriberD.get("userName");
+                if(valFromDoc.equals(username))
+                    return (String)subscriberD.get("_id");
+            }
+            return null;
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
     }
 
 }
