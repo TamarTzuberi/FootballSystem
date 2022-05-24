@@ -46,7 +46,7 @@ public class ServiceController {
             boolean ifRep = dc.checkIfRepresentative();
             if(ifRep)
             {
-                boolean success = dc.registerReferee(id, fullName, email, training);
+                boolean success = dc.registerReferee(fullName, email, training);
                 logger.toLog("SC - Referee registered successfully");
                 return true;
             }
