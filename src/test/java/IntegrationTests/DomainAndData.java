@@ -7,6 +7,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import javax.print.Doc;
+
 import static org.junit.Assert.assertEquals;
 
 public class DomainAndData {
@@ -34,12 +36,15 @@ public class DomainAndData {
 
     @Test
     public void RegisterReferee(){
-        Boolean ifSucceed = domainController.registerReferee("TamarTzubery","tamari123@gmail.com","basic");
-        String[] splitName = "TamarTzubery".split(" ");
+        Boolean ifSucceed = domainController.registerReferee("Tamar Tzubery","tamari123@gmail.com","basic");
+        String[] splitName = "Tamar Tzubery".split(" ");
         String username = splitName[0] + splitName[1].charAt(0);
         String id = subscriberDAO.getIdByUsername(username);
         Document d = subscriberDAO.get(id);
-        assertEquals("Register Referee does not successed","TamarTzubery",(String) d.get("fullName"));
+        Document sub = (Document)d.get("subscriber");
+        String fnDB = (String) sub.get("name");
+        assertEquals("Register Referee does not successed","Tamar Tzubery",fnDB);
+
     }
 
 }

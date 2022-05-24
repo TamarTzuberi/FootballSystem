@@ -6,6 +6,7 @@ import DataAccess.TeamDAO;
 import org.bson.Document;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class DomainController {
 
@@ -35,16 +36,14 @@ public class DomainController {
     }
 
     private static boolean checkFullName(String fullName) {
-        return fullName.matches("[a-zA-Z]+");
+        return fullName.matches("^[a-zA-Z]+\\s+[a-zA-Z]+$");
     }
 
     private static boolean checkEmail(String email) {
         return email.matches("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
     }
 
-    private boolean checkPassword(String password) {
-        return password.matches("^(?=.*\\\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20}$");
-    }
+
 
     public boolean login(String username, String password)
     {
@@ -117,17 +116,12 @@ public class DomainController {
                     }
                     username = usernameTemp;
                     String password = "Rr" + username;
-                    if (checkPassword(password)) {
-                        Referee newReferee = new Referee(fullName, username, password, email, training);
-                        subscriberDAO.save(newReferee.getID(), newReferee);
-                        logger.toLog("DC - Mail with details sent to mail " + email);
-                        logger.toLog("DC - Referee " + fullName + " registered successfully");
-                        return true;
-                    }
-                    else{
-                        logger.toLog("Invalid password");
-                        return false;
-                    }
+                    Referee newReferee = new Referee(fullName, username, password, email, training);
+                    subscriberDAO.save(newReferee.getID(), newReferee);
+                    logger.toLog("DC - Mail with details sent to mail " + email);
+                    logger.toLog("DC - Referee " + fullName + " registered successfully");
+                    return true;
+
 
                 }
             }
@@ -157,18 +151,18 @@ public class DomainController {
         Document teamDetails = (Document) team.get("team");
         String teamID = (String)teamDetails.get("teamID");
         String name = (String)teamDetails.get("name");
-        // TODO - Tamar
-//        ArrayList<LocalDateTime> datesOfGames = teamDAO.getDatesOfGame(teamID);
+        ArrayList<LocalDateTime> datesOfGames = (ArrayList<LocalDateTime>)teamDetails.get("datesOfGames");
         try{
-            // newTeam.setDatesOfGames(datesOfGames);
-            return new Team(teamID,name);
+            Team newTeam = new Team(teamID,name);
+            newTeam.setDatesOfGames(datesOfGames);
+            return newTeam;
         } catch (Exception e) {
             System.out.println("Didn't succeed to create Team object");
             return null;
         }
     }
 
-
+ // ToDO : update the array list of games of team and write to db
     public boolean gamePlacement(String gameID , LocalDateTime time, String place)
     {
         boolean gameExist = gameDAO.checkIfGameExists("gameId", gameID);
