@@ -5,12 +5,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Calendar;
 
 public class Logger {
 
     private static final Logger log = new Logger();
-    public String logname = "simplelog";
+    public String logName = "logs";
     protected String env = System.getProperty("user.dir");
     private static File logFile;
 
@@ -28,7 +29,7 @@ public class Logger {
     }
 
     public static Logger getInstance(String withName){
-        log.logname = withName;
+        log.logName = withName;
         log.createLogFile();
         return log;
     }
@@ -46,8 +47,8 @@ public class Logger {
         Calendar cal = Calendar.getInstance();
 
         //Create the name of the file from the path and current time
-        logname =  logname + '-' +  dateFormat.format(cal.getTime()) + ".log";
-        Logger.logFile = new File(logsFolder.getName(),logname);
+        this.logName =  logName + '-' +  dateFormat.format(cal.getTime()) + ".log";
+        Logger.logFile = new File(logsFolder.getName(),logName);
         try{
             if(logFile.createNewFile()){
                 //New file made
@@ -62,7 +63,10 @@ public class Logger {
     public void toLog(String message){
         try{
             FileWriter out = new FileWriter(Logger.logFile, true);
+            LocalDateTime now = LocalDateTime.now();
+            out.write(now + " ");
             out.write(message.toCharArray());
+            out.write("\n");
             out.close();
         }catch(IOException e){
             System.err.println("ERROR: Could not write to log file");

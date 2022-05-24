@@ -135,7 +135,7 @@ public class DomainController {
     public Game getTheGame(Document game)
     {
         Document gameDetails = (Document)game.get("game");
-        String gameID = (String)gameDetails.get("gameID");
+        String gameID = (String)gameDetails.get("gameId");
         String hostTeamID = (String)gameDetails.get("hostTeamID");
         String guestTeamID = (String)gameDetails.get("guestTeamID");
         try{
@@ -149,7 +149,7 @@ public class DomainController {
     public Team getTheTeam(Document team)
     {
         Document teamDetails = (Document) team.get("team");
-        String teamID = (String)teamDetails.get("teamID");
+        String teamID = (String)teamDetails.get("teamId");
         String name = (String)teamDetails.get("name");
         ArrayList<LocalDateTime> datesOfGames = (ArrayList<LocalDateTime>)teamDetails.get("datesOfGames");
         try{
@@ -189,8 +189,12 @@ public class DomainController {
                     else {
                         newGame.setTime(time);
                         newGame.setField(place);
+                        hostTeam.addGameTime(time);
+                        guestTeam.addGameTime(time);
                         // send update Game object to DB
                         gameDAO.update(gameID, newGame);
+                        teamDAO.update(hostTeamId, hostTeam);
+                        teamDAO.update(guestTeamId, guestTeam);
                         logger.toLog("DC - Game assigned successfully");
                         return true;
                     }
