@@ -1,4 +1,4 @@
-//package Domain;
+//package UnitTests.Domain;
 //
 //public class ClubStaff extends Subscriber{
 //

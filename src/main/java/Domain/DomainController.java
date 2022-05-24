@@ -96,7 +96,7 @@ public class DomainController {
         String name = (String)subscriberDetails.get("name");
         String password = (String)subscriberDetails.get("password");
         String email = (String)subscriberDetails.get("email");
-//        String type = (String)subscriberDetails.get("type");
+        String type = (String)subscriberDetails.get("type");
 //        return (new Subscriber(name,userName,password,email));
         return null;
     }

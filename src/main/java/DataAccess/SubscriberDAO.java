@@ -1,15 +1,9 @@
 package DataAccess;
 
-import Domain.Subscriber;
-import Domain.User;
-import com.mongodb.Cursor;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
-import org.bson.types.ObjectId;
-
-import javax.print.Doc;
 
 import java.util.ArrayList;
 import java.util.List;
