@@ -64,7 +64,7 @@ public class RegisterService {
         boolean ifRep = dc.checkIfRepresentative();
         if(ifRep)
         {
-            boolean success = dc.registerReferee(id, fullName, email, training);
+            boolean success = dc.registerReferee(fullName, email, training);
         }
         else
         {
