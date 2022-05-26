@@ -31,7 +31,6 @@ public class Game {
             this.time = time;
         else
             throw new NullPointerException("time is Null");
-
     }
 
     public String getHostTeamID() {
@@ -62,7 +61,6 @@ public class Game {
             this.gameId = gameId;
         else
             throw new NullPointerException("game id is Null");
-
     }
 
 }

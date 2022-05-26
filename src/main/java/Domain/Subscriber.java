@@ -75,7 +75,6 @@ public class Subscriber extends User{
            this.type = type;
         else
             throw new NullPointerException("ID argument is Null");
-
     }
 
 }

@@ -13,24 +13,21 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.AfterAll;
 
-import javax.print.Doc;
-
 import java.time.LocalDateTime;
 
 import static org.junit.Assert.assertEquals;
 
 public class DomainAndData {
-    private DomainController domainController;
-    private SubscriberDAO subscriberDAO;
-    private GameDAO gameDAO;
-    private TeamDAO teamDAO;
+    private DomainController domainController = DomainController.getInstance();
+    private SubscriberDAO subscriberDAO = SubscriberDAO.getInstance();
+    private GameDAO gameDAO = GameDAO.getInstance();
+    private TeamDAO teamDAO = TeamDAO.getInstance();
 
     @Before
     public void initialize() {
-        domainController = DomainController.getInstance();
-        subscriberDAO = SubscriberDAO.getInstance();
-        gameDAO = GameDAO.getInstance();
-        teamDAO = TeamDAO.getInstance();
+        subscriberDAO.clearCollection();
+        gameDAO.clearCollection();
+        teamDAO.clearCollection();
         try{
             FootballAssociationRepresentative footballAssociationRepresentative = new FootballAssociationRepresentative("Representative0", "Maxim", "maxim123","Maxim123!","maxim123@gmail.com");
             subscriberDAO.save(footballAssociationRepresentative.getID(),footballAssociationRepresentative);
@@ -45,12 +42,6 @@ public class DomainAndData {
         catch (Exception e)
         {
         }
-    }
-    @AfterAll
-    public void cleanData(){
-        subscriberDAO.clearCollection();
-        gameDAO.clearCollection();
-        teamDAO.clearCollection();
     }
 
     @Test
@@ -95,5 +86,12 @@ public class DomainAndData {
         Document sub = (Document)d.get("game");
         String placeDB = (String) sub.get("field");
         assertEquals("The place of the game didn't save properly in the DB","Tedi",placeDB);
+    }
+
+    @After
+    public void endIntegrationTests(){
+        subscriberDAO.clearCollection();
+        gameDAO.clearCollection();
+        teamDAO.clearCollection();
     }
 }

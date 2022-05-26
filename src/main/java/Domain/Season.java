@@ -26,7 +26,6 @@ public class Season {
             this.startDate = startDate;
         else
             throw new NullPointerException("startDate argument is Null");
-
     }
 
     public Date getEndDate() {
@@ -38,7 +37,6 @@ public class Season {
             this.endDate = endDate;
         else
             throw new NullPointerException("endDate argument is Null");
-
     }
 
     public ArrayList<String> getAllLeagues() {

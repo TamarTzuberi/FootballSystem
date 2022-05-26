@@ -31,3 +31,551 @@
 2022-05-26T23:05:14.166 SC - The current user has no permission
 2022-05-26T23:05:14.291 DC - Mail with details sent to mail tamartz@gmail.com
 2022-05-26T23:05:14.291 DC - Referee Tamar Tzuberi registered successfully
+2022-05-26T23:07:22.059 DC - Game assigned successfully
+2022-05-26T23:07:22.096 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:07:22.096 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:07:22.110 email tamari123@gmail.com already exist
+2022-05-26T23:07:22.121 email tamari123@gmail.com already exist
+2022-05-26T23:07:22.185 DC - User connected successfully
+2022-05-26T23:07:22.185 User logged in successfully
+2022-05-26T23:07:22.188 DC - Mail with details sent to mail stavk@post.bgu.ac.il
+2022-05-26T23:07:22.188 DC - Referee Stav Keidar registered successfully
+2022-05-26T23:07:22.189 SC - Referee registered successfully
+2022-05-26T23:07:22.197 DC - Game assigned successfully
+2022-05-26T23:07:22.197 SC - Game placement successfully
+2022-05-26T23:07:22.200 DC - User connected successfully
+2022-05-26T23:07:22.201 User logged in successfully
+2022-05-26T23:07:22.207 SC - Game placement didn't success
+2022-05-26T23:07:22.211 DC - User connected successfully
+2022-05-26T23:07:22.211 User logged in successfully
+2022-05-26T23:07:22.211 SC - The current user danah has no permission
+2022-05-26T23:07:22.214 DC - user danah incorrect password
+2022-05-26T23:07:22.214 User logged in successfully
+2022-05-26T23:07:22.215 SC - Login didn't success
+2022-05-26T23:07:22.216 DC - username tamart not exist
+2022-05-26T23:07:22.217 User logged in successfully
+2022-05-26T23:07:22.217 SC - Login didn't success
+2022-05-26T23:07:22.220 DC - User connected successfully
+2022-05-26T23:07:22.221 User logged in successfully
+2022-05-26T23:07:22.222 email stavk@post.bgu.ac.il already exist
+2022-05-26T23:07:22.222 SC - Registered referee didn't success
+2022-05-26T23:07:22.225 DC - User connected successfully
+2022-05-26T23:07:22.226 User logged in successfully
+2022-05-26T23:07:22.226 SC - The current user has no permission
+2022-05-26T23:07:22.391 DC - Mail with details sent to mail tamartz@gmail.com
+2022-05-26T23:07:22.392 DC - Referee Tamar Tzuberi registered successfully
+2022-05-26T23:08:41.938 DC - User connected successfully
+2022-05-26T23:08:41.945 User logged in successfully
+2022-05-26T23:08:41.951 DC - Mail with details sent to mail stavk@post.bgu.ac.il
+2022-05-26T23:08:41.952 DC - Referee Stav Keidar registered successfully
+2022-05-26T23:08:41.952 SC - Referee registered successfully
+2022-05-26T23:08:41.963 DC - Game assigned successfully
+2022-05-26T23:08:41.963 SC - Game placement successfully
+2022-05-26T23:08:41.968 DC - User connected successfully
+2022-05-26T23:08:41.968 User logged in successfully
+2022-05-26T23:08:41.975 SC - Game placement didn't success
+2022-05-26T23:08:41.980 DC - User connected successfully
+2022-05-26T23:08:41.980 User logged in successfully
+2022-05-26T23:08:41.980 SC - The current user danah has no permission
+2022-05-26T23:08:41.985 DC - user danah incorrect password
+2022-05-26T23:08:41.986 User logged in successfully
+2022-05-26T23:08:41.986 SC - Login didn't success
+2022-05-26T23:08:41.988 DC - username tamart not exist
+2022-05-26T23:08:41.988 User logged in successfully
+2022-05-26T23:08:41.989 SC - Login didn't success
+2022-05-26T23:08:41.992 DC - User connected successfully
+2022-05-26T23:08:41.992 User logged in successfully
+2022-05-26T23:08:41.994 email stavk@post.bgu.ac.il already exist
+2022-05-26T23:08:41.995 SC - Registered referee didn't success
+2022-05-26T23:08:41.998 DC - User connected successfully
+2022-05-26T23:08:41.998 User logged in successfully
+2022-05-26T23:08:41.998 SC - The current user has no permission
+2022-05-26T23:09:02.916 DC - Game assigned successfully
+2022-05-26T23:09:02.954 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:09:02.954 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:09:02.959 email tamari123@gmail.com already exist
+2022-05-26T23:09:02.963 email tamari123@gmail.com already exist
+2022-05-26T23:09:53.616 email tamari123@gmail.com already exist
+2022-05-26T23:09:53.622 email tamari123@gmail.com already exist
+2022-05-26T23:09:53.628 email tamari123@gmail.com already exist
+2022-05-26T23:09:53.702 DC - User connected successfully
+2022-05-26T23:09:53.703 User logged in successfully
+2022-05-26T23:09:53.708 DC - Mail with details sent to mail stavk@post.bgu.ac.il
+2022-05-26T23:09:53.708 DC - Referee Stav Keidar registered successfully
+2022-05-26T23:09:53.709 SC - Referee registered successfully
+2022-05-26T23:09:53.719 DC - Game assigned successfully
+2022-05-26T23:09:53.719 SC - Game placement successfully
+2022-05-26T23:09:53.723 DC - User connected successfully
+2022-05-26T23:09:53.724 User logged in successfully
+2022-05-26T23:09:53.732 SC - Game placement didn't success
+2022-05-26T23:09:53.736 DC - User connected successfully
+2022-05-26T23:09:53.736 User logged in successfully
+2022-05-26T23:09:53.737 SC - The current user danah has no permission
+2022-05-26T23:09:53.742 DC - user danah incorrect password
+2022-05-26T23:09:53.742 User logged in successfully
+2022-05-26T23:09:53.742 SC - Login didn't success
+2022-05-26T23:09:53.744 DC - username tamart not exist
+2022-05-26T23:09:53.745 User logged in successfully
+2022-05-26T23:09:53.745 SC - Login didn't success
+2022-05-26T23:09:53.749 DC - User connected successfully
+2022-05-26T23:09:53.749 User logged in successfully
+2022-05-26T23:09:53.751 email stavk@post.bgu.ac.il already exist
+2022-05-26T23:09:53.751 SC - Registered referee didn't success
+2022-05-26T23:09:53.755 DC - User connected successfully
+2022-05-26T23:09:53.756 User logged in successfully
+2022-05-26T23:09:53.756 SC - The current user has no permission
+2022-05-26T23:09:53.885 DC - Mail with details sent to mail tamartz@gmail.com
+2022-05-26T23:09:53.885 DC - Referee Tamar Tzuberi registered successfully
+2022-05-26T23:10:51.153 DC - Game assigned successfully
+2022-05-26T23:11:43.264 DC - User connected successfully
+2022-05-26T23:11:43.272 User logged in successfully
+2022-05-26T23:11:43.277 DC - Mail with details sent to mail stavk@post.bgu.ac.il
+2022-05-26T23:11:43.277 DC - Referee Stav Keidar registered successfully
+2022-05-26T23:11:43.277 SC - Referee registered successfully
+2022-05-26T23:11:43.290 DC - Game assigned successfully
+2022-05-26T23:11:43.290 SC - Game placement successfully
+2022-05-26T23:11:43.295 DC - User connected successfully
+2022-05-26T23:11:43.295 User logged in successfully
+2022-05-26T23:11:43.302 SC - Game placement didn't success
+2022-05-26T23:11:43.306 DC - User connected successfully
+2022-05-26T23:11:43.306 User logged in successfully
+2022-05-26T23:11:43.306 SC - The current user danah has no permission
+2022-05-26T23:11:43.311 DC - user danah incorrect password
+2022-05-26T23:11:43.311 User logged in successfully
+2022-05-26T23:11:43.311 SC - Login didn't success
+2022-05-26T23:11:43.313 DC - username tamart not exist
+2022-05-26T23:11:43.313 User logged in successfully
+2022-05-26T23:11:43.314 SC - Login didn't success
+2022-05-26T23:11:43.317 DC - User connected successfully
+2022-05-26T23:11:43.318 User logged in successfully
+2022-05-26T23:11:43.319 email stavk@post.bgu.ac.il already exist
+2022-05-26T23:11:43.320 SC - Registered referee didn't success
+2022-05-26T23:11:43.323 DC - User connected successfully
+2022-05-26T23:11:43.323 User logged in successfully
+2022-05-26T23:11:43.323 SC - The current user has no permission
+2022-05-26T23:11:49.457 DC - User connected successfully
+2022-05-26T23:11:49.464 User logged in successfully
+2022-05-26T23:11:49.468 DC - Mail with details sent to mail stavk@post.bgu.ac.il
+2022-05-26T23:11:49.469 DC - Referee Stav Keidar registered successfully
+2022-05-26T23:11:49.469 SC - Referee registered successfully
+2022-05-26T23:11:49.481 DC - Game assigned successfully
+2022-05-26T23:11:49.481 SC - Game placement successfully
+2022-05-26T23:11:49.485 DC - User connected successfully
+2022-05-26T23:11:49.486 User logged in successfully
+2022-05-26T23:11:49.492 SC - Game placement didn't success
+2022-05-26T23:11:49.495 DC - User connected successfully
+2022-05-26T23:11:49.495 User logged in successfully
+2022-05-26T23:11:49.495 SC - The current user danah has no permission
+2022-05-26T23:11:49.498 DC - user danah incorrect password
+2022-05-26T23:11:49.499 User logged in successfully
+2022-05-26T23:11:49.499 SC - Login didn't success
+2022-05-26T23:11:49.501 DC - username tamart not exist
+2022-05-26T23:11:49.501 User logged in successfully
+2022-05-26T23:11:49.501 SC - Login didn't success
+2022-05-26T23:11:49.505 DC - User connected successfully
+2022-05-26T23:11:49.505 User logged in successfully
+2022-05-26T23:11:49.507 email stavk@post.bgu.ac.il already exist
+2022-05-26T23:11:49.507 SC - Registered referee didn't success
+2022-05-26T23:11:49.510 DC - User connected successfully
+2022-05-26T23:11:49.511 User logged in successfully
+2022-05-26T23:11:49.511 SC - The current user has no permission
+2022-05-26T23:12:23.029 DC - Game assigned successfully
+2022-05-26T23:12:23.082 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:12:23.082 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:12:23.089 email tamari123@gmail.com already exist
+2022-05-26T23:12:23.094 email tamari123@gmail.com already exist
+2022-05-26T23:23:25.931 DC - Mail with details sent to mail tamartz@post.bgu.il
+2022-05-26T23:23:25.935 DC - Referee Tamar Tzuberi registered successfully
+2022-05-26T23:23:34.309 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:23:34.316 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:23:34.349 email tamari123@gmail.com already exist
+2022-05-26T23:23:34.442 DC - User connected successfully
+2022-05-26T23:23:34.442 User logged in successfully
+2022-05-26T23:23:34.446 DC - Mail with details sent to mail stavk@post.bgu.ac.il
+2022-05-26T23:23:34.447 DC - Referee Stav Keidar registered successfully
+2022-05-26T23:23:34.447 SC - Referee registered successfully
+2022-05-26T23:23:34.456 DC - Game assigned successfully
+2022-05-26T23:23:34.456 SC - Game placement successfully
+2022-05-26T23:23:34.462 DC - User connected successfully
+2022-05-26T23:23:34.462 User logged in successfully
+2022-05-26T23:23:34.475 SC - Game placement didn't success
+2022-05-26T23:23:34.480 DC - User connected successfully
+2022-05-26T23:23:34.481 User logged in successfully
+2022-05-26T23:23:34.481 SC - The current user danah has no permission
+2022-05-26T23:23:34.485 DC - user danah incorrect password
+2022-05-26T23:23:34.486 User logged in successfully
+2022-05-26T23:23:34.486 SC - Login didn't success
+2022-05-26T23:23:34.488 DC - username tamart not exist
+2022-05-26T23:23:34.489 User logged in successfully
+2022-05-26T23:23:34.489 SC - Login didn't success
+2022-05-26T23:23:34.495 DC - User connected successfully
+2022-05-26T23:23:34.496 User logged in successfully
+2022-05-26T23:23:34.498 email stavk@post.bgu.ac.il already exist
+2022-05-26T23:23:34.499 SC - Registered referee didn't success
+2022-05-26T23:23:34.504 DC - User connected successfully
+2022-05-26T23:23:34.504 User logged in successfully
+2022-05-26T23:23:34.505 SC - The current user has no permission
+2022-05-26T23:23:34.743 DC - Mail with details sent to mail tamartz@post.bgu.il
+2022-05-26T23:23:34.744 DC - Referee Tamar Tzuberi registered successfully
+2022-05-26T23:24:46.447 DC - User connected successfully
+2022-05-26T23:24:46.465 User logged in successfully
+2022-05-26T23:24:46.475 DC - Mail with details sent to mail stavk@post.bgu.ac.il
+2022-05-26T23:24:46.475 DC - Referee Stav Keidar registered successfully
+2022-05-26T23:24:46.476 SC - Referee registered successfully
+2022-05-26T23:24:46.505 DC - Game assigned successfully
+2022-05-26T23:24:46.506 SC - Game placement successfully
+2022-05-26T23:24:46.513 DC - User connected successfully
+2022-05-26T23:24:46.513 User logged in successfully
+2022-05-26T23:24:46.525 SC - Game placement didn't success
+2022-05-26T23:24:46.534 DC - User connected successfully
+2022-05-26T23:24:46.535 User logged in successfully
+2022-05-26T23:24:46.535 SC - The current user danah has no permission
+2022-05-26T23:24:46.545 DC - user danah incorrect password
+2022-05-26T23:24:46.546 User logged in successfully
+2022-05-26T23:24:46.546 SC - Login didn't success
+2022-05-26T23:24:46.550 DC - username tamart not exist
+2022-05-26T23:24:46.550 User logged in successfully
+2022-05-26T23:24:46.551 SC - Login didn't success
+2022-05-26T23:24:46.564 DC - User connected successfully
+2022-05-26T23:24:46.564 User logged in successfully
+2022-05-26T23:24:46.567 email stavk@post.bgu.ac.il already exist
+2022-05-26T23:24:46.567 SC - Registered referee didn't success
+2022-05-26T23:24:46.573 DC - User connected successfully
+2022-05-26T23:24:46.574 User logged in successfully
+2022-05-26T23:24:46.574 SC - The current user has no permission
+2022-05-26T23:24:52.148 DC - Game assigned successfully
+2022-05-26T23:24:52.212 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:24:52.212 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:24:52.224 email tamari123@gmail.com already exist
+2022-05-26T23:24:52.240 email tamari123@gmail.com already exist
+2022-05-26T23:25:05.851 DC - Mail with details sent to mail tamartz@post.bgu.il
+2022-05-26T23:25:05.854 DC - Referee Tamar Tzuberi registered successfully
+2022-05-26T23:25:37.480 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:25:37.487 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:25:37.517 email tamari123@gmail.com already exist
+2022-05-26T23:25:37.668 DC - User connected successfully
+2022-05-26T23:25:37.670 User logged in successfully
+2022-05-26T23:25:37.682 DC - Mail with details sent to mail stavk@post.bgu.ac.il
+2022-05-26T23:25:37.683 DC - Referee Stav Keidar registered successfully
+2022-05-26T23:25:37.683 SC - Referee registered successfully
+2022-05-26T23:25:37.702 DC - Game assigned successfully
+2022-05-26T23:25:37.703 SC - Game placement successfully
+2022-05-26T23:25:37.716 DC - User connected successfully
+2022-05-26T23:25:37.717 User logged in successfully
+2022-05-26T23:25:37.731 SC - Game placement didn't success
+2022-05-26T23:25:37.737 DC - User connected successfully
+2022-05-26T23:25:37.738 User logged in successfully
+2022-05-26T23:25:37.739 SC - The current user danah has no permission
+2022-05-26T23:25:37.747 DC - user danah incorrect password
+2022-05-26T23:25:37.748 User logged in successfully
+2022-05-26T23:25:37.748 SC - Login didn't success
+2022-05-26T23:25:37.755 DC - username tamart not exist
+2022-05-26T23:25:37.756 User logged in successfully
+2022-05-26T23:25:37.757 SC - Login didn't success
+2022-05-26T23:25:37.765 DC - User connected successfully
+2022-05-26T23:25:37.766 User logged in successfully
+2022-05-26T23:25:37.768 email stavk@post.bgu.ac.il already exist
+2022-05-26T23:25:37.768 SC - Registered referee didn't success
+2022-05-26T23:25:37.775 DC - User connected successfully
+2022-05-26T23:25:37.775 User logged in successfully
+2022-05-26T23:25:37.776 SC - The current user has no permission
+2022-05-26T23:25:38.120 DC - Mail with details sent to mail tamartz@post.bgu.il
+2022-05-26T23:25:38.120 DC - Referee Tamar Tzuberi registered successfully
+2022-05-26T23:28:36.136 DC - Game assigned successfully
+2022-05-26T23:28:36.277 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:28:36.277 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:28:36.391 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:28:36.391 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:28:36.474 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:28:36.474 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:28:44.017 DC - Game assigned successfully
+2022-05-26T23:28:44.125 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:28:44.125 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:28:44.221 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:28:44.221 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:28:44.300 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:28:44.300 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:28:44.404 DC - User connected successfully
+2022-05-26T23:28:44.405 User logged in successfully
+2022-05-26T23:28:44.409 DC - Mail with details sent to mail stavk@post.bgu.ac.il
+2022-05-26T23:28:44.410 DC - Referee Stav Keidar registered successfully
+2022-05-26T23:28:44.411 SC - Referee registered successfully
+2022-05-26T23:28:44.427 DC - Game assigned successfully
+2022-05-26T23:28:44.429 SC - Game placement successfully
+2022-05-26T23:28:44.433 DC - User connected successfully
+2022-05-26T23:28:44.434 User logged in successfully
+2022-05-26T23:28:44.449 SC - Game placement didn't success
+2022-05-26T23:28:44.455 DC - User connected successfully
+2022-05-26T23:28:44.456 User logged in successfully
+2022-05-26T23:28:44.456 SC - The current user danah has no permission
+2022-05-26T23:28:44.464 DC - user danah incorrect password
+2022-05-26T23:28:44.464 User logged in successfully
+2022-05-26T23:28:44.465 SC - Login didn't success
+2022-05-26T23:28:44.468 DC - username tamart not exist
+2022-05-26T23:28:44.469 User logged in successfully
+2022-05-26T23:28:44.470 SC - Login didn't success
+2022-05-26T23:28:44.484 DC - User connected successfully
+2022-05-26T23:28:44.484 User logged in successfully
+2022-05-26T23:28:44.486 email stavk@post.bgu.ac.il already exist
+2022-05-26T23:28:44.487 SC - Registered referee didn't success
+2022-05-26T23:28:44.494 DC - User connected successfully
+2022-05-26T23:28:44.494 User logged in successfully
+2022-05-26T23:28:44.495 SC - The current user has no permission
+2022-05-26T23:28:44.776 DC - Mail with details sent to mail tamartz@post.bgu.il
+2022-05-26T23:28:44.776 DC - Referee Tamar Tzuberi registered successfully
+2022-05-26T23:30:13.093 DC - Game assigned successfully
+2022-05-26T23:30:13.226 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:30:13.227 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:30:13.323 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:30:13.323 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:30:13.417 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:30:13.417 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:30:13.525 DC - User connected successfully
+2022-05-26T23:30:13.525 User logged in successfully
+2022-05-26T23:30:13.530 DC - Mail with details sent to mail stavk@post.bgu.ac.il
+2022-05-26T23:30:13.531 DC - Referee Stav Keidar registered successfully
+2022-05-26T23:30:13.531 SC - Referee registered successfully
+2022-05-26T23:30:13.552 DC - Game assigned successfully
+2022-05-26T23:30:13.553 SC - Game placement successfully
+2022-05-26T23:30:13.559 DC - User connected successfully
+2022-05-26T23:30:13.560 User logged in successfully
+2022-05-26T23:30:13.573 SC - Game placement didn't success
+2022-05-26T23:30:13.580 DC - User connected successfully
+2022-05-26T23:30:13.581 User logged in successfully
+2022-05-26T23:30:13.582 SC - The current user danah has no permission
+2022-05-26T23:30:13.594 DC - user danah incorrect password
+2022-05-26T23:30:13.595 User logged in successfully
+2022-05-26T23:30:13.596 SC - Login didn't success
+2022-05-26T23:30:13.600 DC - username tamart not exist
+2022-05-26T23:30:13.601 User logged in successfully
+2022-05-26T23:30:13.602 SC - Login didn't success
+2022-05-26T23:30:13.615 DC - User connected successfully
+2022-05-26T23:30:13.616 User logged in successfully
+2022-05-26T23:30:13.619 email stavk@post.bgu.ac.il already exist
+2022-05-26T23:30:13.619 SC - Registered referee didn't success
+2022-05-26T23:30:13.633 DC - User connected successfully
+2022-05-26T23:30:13.634 User logged in successfully
+2022-05-26T23:30:13.636 SC - The current user has no permission
+2022-05-26T23:30:13.935 DC - Mail with details sent to mail tamartz@post.bgu.il
+2022-05-26T23:30:13.936 DC - Referee Tamar Tzuberi registered successfully
+2022-05-26T23:30:18.689 DC - Mail with details sent to mail tamartz@post.bgu.il
+2022-05-26T23:30:18.707 DC - Referee Tamar Tzuberi registered successfully
+2022-05-26T23:30:48.124 DC - Mail with details sent to mail tamartz@post.bgu.il
+2022-05-26T23:30:48.129 DC - Referee Tamar Tzuberi registered successfully
+2022-05-26T23:30:54.366 DC - Mail with details sent to mail tamartz@post.bgu.il
+2022-05-26T23:30:54.370 DC - Referee Tamar Tzuberi registered successfully
+2022-05-26T23:31:51.573 DC - Game assigned successfully
+2022-05-26T23:31:51.693 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:31:51.694 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:31:51.780 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:31:51.780 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:31:51.870 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:31:51.871 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:34:17.296 DC - Mail with details sent to mail tamartz@post.bgu.il
+2022-05-26T23:34:17.300 DC - Referee Tamar Tzuberi registered successfully
+2022-05-26T23:34:24.698 DC - Game assigned successfully
+2022-05-26T23:34:24.822 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:34:24.823 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:34:24.915 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:34:24.916 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:34:25.001 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:34:25.001 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:34:25.090 DC - User connected successfully
+2022-05-26T23:34:25.091 User logged in successfully
+2022-05-26T23:34:25.095 DC - Mail with details sent to mail stavk@post.bgu.ac.il
+2022-05-26T23:34:25.095 DC - Referee Stav Keidar registered successfully
+2022-05-26T23:34:25.096 SC - Referee registered successfully
+2022-05-26T23:34:25.107 DC - Game assigned successfully
+2022-05-26T23:34:25.108 SC - Game placement successfully
+2022-05-26T23:34:25.113 DC - User connected successfully
+2022-05-26T23:34:25.114 User logged in successfully
+2022-05-26T23:34:25.125 SC - Game placement didn't success
+2022-05-26T23:34:25.131 DC - User connected successfully
+2022-05-26T23:34:25.131 User logged in successfully
+2022-05-26T23:34:25.132 SC - The current user danah has no permission
+2022-05-26T23:34:25.138 DC - user danah incorrect password
+2022-05-26T23:34:25.139 User logged in successfully
+2022-05-26T23:34:25.139 SC - Login didn't success
+2022-05-26T23:34:25.143 DC - username tamart not exist
+2022-05-26T23:34:25.143 User logged in successfully
+2022-05-26T23:34:25.144 SC - Login didn't success
+2022-05-26T23:34:25.157 DC - User connected successfully
+2022-05-26T23:34:25.157 User logged in successfully
+2022-05-26T23:34:25.160 email stavk@post.bgu.ac.il already exist
+2022-05-26T23:34:25.160 SC - Registered referee didn't success
+2022-05-26T23:34:25.165 DC - User connected successfully
+2022-05-26T23:34:25.165 User logged in successfully
+2022-05-26T23:34:25.166 SC - The current user has no permission
+2022-05-26T23:34:25.394 DC - Mail with details sent to mail tamartz@post.bgu.il
+2022-05-26T23:34:25.395 DC - Referee Tamar Tzuberi registered successfully
+2022-05-26T23:34:44.065 DC - Game assigned successfully
+2022-05-26T23:34:44.180 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:34:44.181 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:34:44.293 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:34:44.294 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:34:44.406 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:34:44.406 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:34:44.508 DC - User connected successfully
+2022-05-26T23:34:44.509 User logged in successfully
+2022-05-26T23:34:44.514 DC - Mail with details sent to mail stavk@post.bgu.ac.il
+2022-05-26T23:34:44.514 DC - Referee Stav Keidar registered successfully
+2022-05-26T23:34:44.515 SC - Referee registered successfully
+2022-05-26T23:34:44.532 DC - Game assigned successfully
+2022-05-26T23:34:44.532 SC - Game placement successfully
+2022-05-26T23:34:44.537 DC - User connected successfully
+2022-05-26T23:34:44.537 User logged in successfully
+2022-05-26T23:34:44.547 SC - Game placement didn't success
+2022-05-26T23:34:44.552 DC - User connected successfully
+2022-05-26T23:34:44.553 User logged in successfully
+2022-05-26T23:34:44.553 SC - The current user danah has no permission
+2022-05-26T23:34:44.558 DC - user danah incorrect password
+2022-05-26T23:34:44.558 User logged in successfully
+2022-05-26T23:34:44.559 SC - Login didn't success
+2022-05-26T23:34:44.563 DC - username tamart not exist
+2022-05-26T23:34:44.564 User logged in successfully
+2022-05-26T23:34:44.564 SC - Login didn't success
+2022-05-26T23:34:44.577 DC - User connected successfully
+2022-05-26T23:34:44.577 User logged in successfully
+2022-05-26T23:34:44.578 email stavk@post.bgu.ac.il already exist
+2022-05-26T23:34:44.579 SC - Registered referee didn't success
+2022-05-26T23:34:44.587 DC - User connected successfully
+2022-05-26T23:34:44.587 User logged in successfully
+2022-05-26T23:34:44.588 SC - The current user has no permission
+2022-05-26T23:34:44.890 DC - Mail with details sent to mail tamartz@post.bgu.il
+2022-05-26T23:34:44.890 DC - Referee Tamar Tzuberi registered successfully
+2022-05-26T23:35:06.547 DC - Game assigned successfully
+2022-05-26T23:35:06.674 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:35:06.674 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:35:30.121 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:35:30.121 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:38:18.376 DC - Game assigned successfully
+2022-05-26T23:38:18.532 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:38:18.533 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:38:18.618 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:38:18.618 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:38:18.704 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:38:18.704 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:38:18.795 DC - User connected successfully
+2022-05-26T23:38:18.796 User logged in successfully
+2022-05-26T23:38:18.801 DC - Mail with details sent to mail stavk@post.bgu.ac.il
+2022-05-26T23:38:18.801 DC - Referee Stav Keidar registered successfully
+2022-05-26T23:38:18.802 SC - Referee registered successfully
+2022-05-26T23:38:18.815 DC - Game assigned successfully
+2022-05-26T23:38:18.816 SC - Game placement successfully
+2022-05-26T23:38:18.822 DC - User connected successfully
+2022-05-26T23:38:18.823 User logged in successfully
+2022-05-26T23:38:18.834 SC - Game placement didn't success
+2022-05-26T23:38:18.839 DC - User connected successfully
+2022-05-26T23:38:18.839 User logged in successfully
+2022-05-26T23:38:18.840 SC - The current user danah has no permission
+2022-05-26T23:38:18.844 DC - user danah incorrect password
+2022-05-26T23:38:18.845 User logged in successfully
+2022-05-26T23:38:18.845 SC - Login didn't success
+2022-05-26T23:38:18.850 DC - username tamart not exist
+2022-05-26T23:38:18.850 User logged in successfully
+2022-05-26T23:38:18.851 SC - Login didn't success
+2022-05-26T23:38:18.865 DC - User connected successfully
+2022-05-26T23:38:18.865 User logged in successfully
+2022-05-26T23:38:18.867 email stavk@post.bgu.ac.il already exist
+2022-05-26T23:38:18.868 SC - Registered referee didn't success
+2022-05-26T23:38:18.874 DC - User connected successfully
+2022-05-26T23:38:18.874 User logged in successfully
+2022-05-26T23:38:18.875 SC - The current user has no permission
+2022-05-26T23:38:19.244 DC - Mail with details sent to mail tamartz@post.bgu.il
+2022-05-26T23:38:19.245 DC - Referee Tamar Tzuberi registered successfully
+2022-05-26T23:38:58.101 DC - Game assigned successfully
+2022-05-26T23:38:58.233 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:38:58.235 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:38:58.355 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:38:58.356 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:38:58.499 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:38:58.500 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:38:58.648 DC - User connected successfully
+2022-05-26T23:38:58.648 User logged in successfully
+2022-05-26T23:38:58.654 DC - Mail with details sent to mail stavk@post.bgu.ac.il
+2022-05-26T23:38:58.655 DC - Referee Stav Keidar registered successfully
+2022-05-26T23:38:58.656 SC - Referee registered successfully
+2022-05-26T23:38:58.684 DC - Game assigned successfully
+2022-05-26T23:38:58.685 SC - Game placement successfully
+2022-05-26T23:38:58.692 DC - User connected successfully
+2022-05-26T23:38:58.693 User logged in successfully
+2022-05-26T23:38:58.715 SC - Game placement didn't success
+2022-05-26T23:38:58.723 DC - User connected successfully
+2022-05-26T23:38:58.724 User logged in successfully
+2022-05-26T23:38:58.725 SC - The current user danah has no permission
+2022-05-26T23:38:58.732 DC - user danah incorrect password
+2022-05-26T23:38:58.732 User logged in successfully
+2022-05-26T23:38:58.733 SC - Login didn't success
+2022-05-26T23:38:58.737 DC - username tamart not exist
+2022-05-26T23:38:58.737 User logged in successfully
+2022-05-26T23:38:58.738 SC - Login didn't success
+2022-05-26T23:38:58.752 DC - User connected successfully
+2022-05-26T23:38:58.753 User logged in successfully
+2022-05-26T23:38:58.756 email stavk@post.bgu.ac.il already exist
+2022-05-26T23:38:58.757 SC - Registered referee didn't success
+2022-05-26T23:38:58.773 DC - User connected successfully
+2022-05-26T23:38:58.773 User logged in successfully
+2022-05-26T23:38:58.774 SC - The current user has no permission
+2022-05-26T23:38:59.131 DC - Mail with details sent to mail tamartz@post.bgu.il
+2022-05-26T23:38:59.132 DC - Referee Tamar Tzuberi registered successfully
+2022-05-26T23:40:13.244 DC - User connected successfully
+2022-05-26T23:40:13.256 User logged in successfully
+2022-05-26T23:40:13.276 DC - Mail with details sent to mail stavk@post.bgu.ac.il
+2022-05-26T23:40:13.276 DC - Referee Stav Keidar registered successfully
+2022-05-26T23:40:13.277 SC - Referee registered successfully
+2022-05-26T23:40:13.294 DC - Game assigned successfully
+2022-05-26T23:40:13.295 SC - Game placement successfully
+2022-05-26T23:40:13.302 DC - User connected successfully
+2022-05-26T23:40:13.303 User logged in successfully
+2022-05-26T23:40:13.314 SC - Game placement didn't success
+2022-05-26T23:40:13.320 DC - User connected successfully
+2022-05-26T23:40:13.320 User logged in successfully
+2022-05-26T23:40:13.321 SC - The current user danah has no permission
+2022-05-26T23:40:13.325 DC - user danah incorrect password
+2022-05-26T23:40:13.326 User logged in successfully
+2022-05-26T23:40:13.326 SC - Login didn't success
+2022-05-26T23:40:13.329 DC - username tamart not exist
+2022-05-26T23:40:13.330 User logged in successfully
+2022-05-26T23:40:13.330 SC - Login didn't success
+2022-05-26T23:40:13.335 DC - User connected successfully
+2022-05-26T23:40:13.336 User logged in successfully
+2022-05-26T23:40:13.339 email stavk@post.bgu.ac.il already exist
+2022-05-26T23:40:13.340 SC - Registered referee didn't success
+2022-05-26T23:40:13.347 DC - User connected successfully
+2022-05-26T23:40:13.348 User logged in successfully
+2022-05-26T23:40:13.349 SC - The current user has no permission
+2022-05-26T23:51:17.917 DC - Game assigned successfully
+2022-05-26T23:51:18.041 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:51:18.042 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:51:18.139 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:51:18.139 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:51:18.214 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:51:18.215 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:51:18.305 DC - User connected successfully
+2022-05-26T23:51:18.306 User logged in successfully
+2022-05-26T23:51:18.310 DC - Mail with details sent to mail stavk@post.bgu.ac.il
+2022-05-26T23:51:18.310 DC - Referee Stav Keidar registered successfully
+2022-05-26T23:51:18.311 SC - Referee registered successfully
+2022-05-26T23:51:18.322 DC - Game assigned successfully
+2022-05-26T23:51:18.322 SC - Game placement successfully
+2022-05-26T23:51:18.334 DC - User connected successfully
+2022-05-26T23:51:18.335 User logged in successfully
+2022-05-26T23:51:18.350 SC - Game placement didn't success
+2022-05-26T23:51:18.356 DC - User connected successfully
+2022-05-26T23:51:18.356 User logged in successfully
+2022-05-26T23:51:18.357 SC - The current user danah has no permission
+2022-05-26T23:51:18.366 DC - user danah incorrect password
+2022-05-26T23:51:18.367 User logged in successfully
+2022-05-26T23:51:18.367 SC - Login didn't success
+2022-05-26T23:51:18.371 DC - username tamart not exist
+2022-05-26T23:51:18.371 User logged in successfully
+2022-05-26T23:51:18.372 SC - Login didn't success
+2022-05-26T23:51:18.387 DC - User connected successfully
+2022-05-26T23:51:18.387 User logged in successfully
+2022-05-26T23:51:18.390 email stavk@post.bgu.ac.il already exist
+2022-05-26T23:51:18.390 SC - Registered referee didn't success
+2022-05-26T23:51:18.402 DC - User connected successfully
+2022-05-26T23:51:18.403 User logged in successfully
+2022-05-26T23:51:18.403 SC - The current user has no permission
+2022-05-26T23:51:18.672 DC - Mail with details sent to mail tamartz@post.bgu.il
+2022-05-26T23:51:18.673 DC - Referee Tamar Tzuberi registered successfully
