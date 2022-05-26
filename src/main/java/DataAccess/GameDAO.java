@@ -20,20 +20,27 @@ public class GameDAO implements DAO {
     static DBConnector dbc = DBConnector.getInstance();
     static MongoDatabase database = dbc.getConnection();
 
-    private GameDAO(){
-
-    }
 
     public static GameDAO getInstance(){
         return instance;
     }
 
+    /**
+     *
+     * @param id : String of id of the object
+     * @param game : Object to set in DB
+     */
     @Override
     public void save(String id, Object game) {
         Document newGame =  new Document("_id",id).append("game",game);
         database.getCollection("games").insertOne(newGame);
     }
 
+    /**
+     *
+     * @param id : String of id of the object
+     * @return Document with all the details of the object in DB
+     */
     @Override
     public Document get(String id) {
         MongoCollection collection=database.getCollection("games");
@@ -42,6 +49,11 @@ public class GameDAO implements DAO {
     }
 
 
+    /**
+     *
+     * @param id : String of id of the object
+     * @param game : Object to set in DB
+     */
     public void update(String id,Object game){
         MongoCollection collection=database.getCollection("games");
         Bson globalFilter = Filters.eq("_id", id);
@@ -49,6 +61,13 @@ public class GameDAO implements DAO {
         collection.replaceOne(globalFilter,newGame);
     }
 
+
+    /**
+     *
+     * @param key : String of the field
+     * @param value : String of the value to check if exist in DB
+     * @return Boolean : true if value already exist, else false
+     */
     public boolean checkIfGameExists(String key, String value)
     {
         try{
@@ -71,6 +90,10 @@ public class GameDAO implements DAO {
             return false;
         }
     }
+
+    /**
+     * Clear the collection in the DB
+     */
     public void clearCollection() {
         MongoCollection collection = database.getCollection("games");
         collection.drop();
