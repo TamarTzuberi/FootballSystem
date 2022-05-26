@@ -1,0 +1,33 @@
+2022-05-26T23:05:14.013 DC - Game assigned successfully
+2022-05-26T23:05:14.042 DC - Mail with details sent to mail tamari123@gmail.com
+2022-05-26T23:05:14.042 DC - Referee Tamar Tzubery registered successfully
+2022-05-26T23:05:14.048 email tamari123@gmail.com already exist
+2022-05-26T23:05:14.052 email tamari123@gmail.com already exist
+2022-05-26T23:05:14.125 DC - User connected successfully
+2022-05-26T23:05:14.125 User logged in successfully
+2022-05-26T23:05:14.129 DC - Mail with details sent to mail stavk@post.bgu.ac.il
+2022-05-26T23:05:14.129 DC - Referee Stav Keidar registered successfully
+2022-05-26T23:05:14.129 SC - Referee registered successfully
+2022-05-26T23:05:14.137 DC - Game assigned successfully
+2022-05-26T23:05:14.138 SC - Game placement successfully
+2022-05-26T23:05:14.141 DC - User connected successfully
+2022-05-26T23:05:14.141 User logged in successfully
+2022-05-26T23:05:14.148 SC - Game placement didn't success
+2022-05-26T23:05:14.151 DC - User connected successfully
+2022-05-26T23:05:14.152 User logged in successfully
+2022-05-26T23:05:14.152 SC - The current user danah has no permission
+2022-05-26T23:05:14.155 DC - user danah incorrect password
+2022-05-26T23:05:14.155 User logged in successfully
+2022-05-26T23:05:14.155 SC - Login didn't success
+2022-05-26T23:05:14.157 DC - username tamart not exist
+2022-05-26T23:05:14.157 User logged in successfully
+2022-05-26T23:05:14.157 SC - Login didn't success
+2022-05-26T23:05:14.161 DC - User connected successfully
+2022-05-26T23:05:14.161 User logged in successfully
+2022-05-26T23:05:14.162 email stavk@post.bgu.ac.il already exist
+2022-05-26T23:05:14.162 SC - Registered referee didn't success
+2022-05-26T23:05:14.165 DC - User connected successfully
+2022-05-26T23:05:14.165 User logged in successfully
+2022-05-26T23:05:14.166 SC - The current user has no permission
+2022-05-26T23:05:14.291 DC - Mail with details sent to mail tamartz@gmail.com
+2022-05-26T23:05:14.291 DC - Referee Tamar Tzuberi registered successfully
