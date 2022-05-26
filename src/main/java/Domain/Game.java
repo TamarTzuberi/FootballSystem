@@ -4,8 +4,7 @@ import java.time.LocalDateTime;
 
 public class Game {
 
-
-    private String ID;
+    private String gameId;
     private LocalDateTime time;
     private String hostTeamID;
     private String guestTeamID;
@@ -19,7 +18,7 @@ public class Game {
         }
         this.hostTeamID = hostTeamId;
         this.guestTeamID = guestTeamId;
-        this.ID = id;
+        this.gameId = id;
     }
 
 
@@ -52,6 +51,18 @@ public class Game {
             this.field = field;
         else
             throw new NullPointerException("field is Null");
+    }
+
+    public String getGameId() {
+        return gameId;
+    }
+
+    public void setGameId(String gameId) {
+        if (gameId != null)
+            this.gameId = gameId;
+        else
+            throw new NullPointerException("game id is Null");
+
     }
 
 }

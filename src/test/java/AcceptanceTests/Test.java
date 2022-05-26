@@ -25,6 +25,7 @@ public class Test {
 
     @BeforeClass
     public static void initialize(){
+        System.out.println("@BeforeClass");
         try{
             subscriberDAO.clearCollection();
             gameDAO.clearCollection();
@@ -50,7 +51,6 @@ public class Test {
     }
 
     @org.junit.Test
-    @DisplayName("Test flow true")
     public void testFlowTrue(){
         boolean successLogin = SC.login("navitb", "navitb123!");
         assertTrue("couldn't login successfully",successLogin);
@@ -62,7 +62,6 @@ public class Test {
     }
 
     @org.junit.Test
-    @DisplayName("No permission to register")
     public void noPermissionToReg(){
         boolean successLogin = SC.login("danah", "danah123!");
         assertTrue("couldn't login successfully",successLogin);
@@ -71,7 +70,6 @@ public class Test {
     }
 
     @org.junit.Test
-    @DisplayName("referee already exist")
     public void refereeAlreadyExist(){
         boolean successLogin = SC.login("navitb", "navitb123!");
         assertTrue("couldn't login successfully",successLogin);
@@ -80,7 +78,6 @@ public class Test {
     }
 
     @org.junit.Test
-    @DisplayName("team unavailable in specific date")
     public void teamUnavailable() {
         boolean successLogin = SC.login("navitb", "navitb123!");
         assertTrue("couldn't login successfully", successLogin);
@@ -116,6 +113,5 @@ public class Test {
         gameDAO.clearCollection();
         teamDAO.clearCollection();
     }
-
 }
 
