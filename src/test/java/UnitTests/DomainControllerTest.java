@@ -51,13 +51,5 @@ class DomainControllerTest {
         assertEquals(false,DC.registerReferee("Tamar Tzuberi","tamartzgmail.com","basic"),"bad full name");
     }
 
-    @Test
-    void gamePlacement() {
 
-    }
-
-    @Test
-    void login() {
-
-    }
 }

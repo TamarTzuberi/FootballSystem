@@ -52,7 +52,12 @@ public class DomainController {
     }
 
 
-
+    /**
+     *
+     * @param username String : the user name to login
+     * @param password String : the password to login
+     * @return Boolean : true if login success, else false
+     */
     public boolean login(String username, String password)
     {
         //check if username exist in DB
@@ -80,7 +85,10 @@ public class DomainController {
         return false;
     }
 
-
+    /**
+     *
+     * @return Boolean : true if the connected user os representative, else false
+     */
     public boolean checkIfRepresentative()
     {
         if (connectedUser != null){
@@ -103,6 +111,15 @@ public class DomainController {
         return (new Subscriber(id, name, userName, password, email, type));
     }
 
+
+
+    /**
+     *
+     * @param fullName String : the full name of the referee
+     * @param email String : the email of the referee
+     * @param training String : the training of the referee
+     * @return Boolean : true if register success, else false
+     */
     public boolean registerReferee(String fullName, String email, String training)
     {
         if (checkFullName(fullName)) {
@@ -170,7 +187,13 @@ public class DomainController {
         }
     }
 
- // ToDO : update the array list of games of team and write to db
+    /**
+     *
+     * @param gameID String: the id of the game
+     * @param time LocalDateTime : the time of the game
+     * @param place String : the place of the game
+     * @return Boolean : true if game placement successed, else false
+     */
     public boolean gamePlacement(String gameID , LocalDateTime time, String place)
     {
         boolean gameExist = gameDAO.checkIfGameExists("gameId", gameID);

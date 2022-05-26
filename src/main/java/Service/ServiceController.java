@@ -20,6 +20,12 @@ public class ServiceController {
         return SC;
     }
 
+    /**
+     *
+     * @param username String : the user name to login
+     * @param password String : the password to login
+     * @return Boolean : true if login success, else false
+     */
     public boolean login(String username, String password)
     {
         if (username == null || password == null){
@@ -41,6 +47,13 @@ public class ServiceController {
             }
     }
 
+    /**
+     *
+     * @param fullName String : the full name of the referee
+     * @param email String : the email of the referee
+     * @param training String : the training of the referee
+     * @return Boolean : true if register success, else false
+     */
     public boolean registerReferee(String fullName, String email, String training)
     {
         if (fullName == null || email == null || training == null){
@@ -72,7 +85,13 @@ public class ServiceController {
         }
     }
 
-
+    /**
+     *
+     * @param gameId String: the id of the game
+     * @param time LocalDateTime : the time of the game
+     * @param place String : the place of the game
+     * @return Boolean : true if game placement successed, else false
+     */
     public boolean gamePlacement(String gameId, LocalDateTime time, String place)
     {
         if (gameId == null || time == null || place == null){

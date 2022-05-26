@@ -21,10 +21,10 @@ public class DBConnector {
         return instance;
     }
 
-    private DBConnector(){
-
-    }
-
+    /**
+     *
+     * @return database : MongoDatabase object
+     */
     public static MongoDatabase getConnection(){
         try{
             MongoClient mongoClient = new MongoClient(new MongoClientURI(url));

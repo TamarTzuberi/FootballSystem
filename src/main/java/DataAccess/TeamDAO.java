@@ -18,20 +18,29 @@ public class TeamDAO implements DAO{
     static DBConnector dbc = DBConnector.getInstance();
     static MongoDatabase database = dbc.getConnection();
 
-    private TeamDAO(){
-
-    }
 
     public static TeamDAO getInstance(){
         return instance;
     }
 
+
+    /**
+     *
+     * @param id : String of id of the object
+     * @param team : Object to set in DB
+     */
     @Override
     public void save(String id, Object team) {
         Document newTeam =  new Document("_id",id).append("team",team);
         database.getCollection("teams").insertOne(newTeam);
     }
 
+
+    /**
+     *
+     * @param id : String of id of the object
+     * @return Document with all the details of the object in DB
+     */
     @Override
     public Document get(String id) {
         MongoCollection collection=database.getCollection("teams");
@@ -46,6 +55,13 @@ public class TeamDAO implements DAO{
         collection.replaceOne(globalFilter,newTeam);
     }
 
+
+    /**
+     *
+     * @param key : String of the field
+     * @param value : String of the value to check if exist in DB
+     * @return Boolean : true if value already exist, else false
+     */
     public boolean checkIfTeamExists(String key, String value)
     {
         try{
@@ -68,19 +84,14 @@ public class TeamDAO implements DAO{
             return false;
         }
     }
+
+    /**
+     * Clear the collection in the DB
+     */
     public void clearCollection() {
         MongoCollection collection = database.getCollection("teams");
         collection.drop();
     }
 
-    // TODO - Tamar
-    public void clearObject(String teamId){
 
-    }
-
-
-//    public ArrayList<LocalDateTime> getDatesOfGame(String teamID){
-//        ArrayList<LocalDateTime> arr = new ArrayList<>();
-//        return arr;
-//    }
 }

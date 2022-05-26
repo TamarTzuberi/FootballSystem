@@ -20,23 +20,26 @@ public class SubscriberDAO implements DAO {
         return instance;
     }
 
-    private SubscriberDAO(){
-
-    }
 
     public static void main(String[] args) {
         getInstance().clearCollection();
-
-
     }
 
-
+    /**
+     *
+     * @param id : String of id of the object
+     * @param subscriber : Object to set in DB
+     */
     @Override
     public void save(String id, Object subscriber) {
         Document newUser =  new Document("_id",id).append("subscriber",subscriber);
         database.getCollection("subscribers").insertOne(newUser);
     }
-
+    /**
+     *
+     * @param id : String of id of the object
+     * @return Document with all the details of the object in DB
+     */
     @Override
     public Document get(String id) {
         MongoCollection collection=database.getCollection("subscribers");
@@ -44,6 +47,12 @@ public class SubscriberDAO implements DAO {
         return d;
     }
 
+    /**
+     *
+     * @param key : String of the field
+     * @param value : String of the value to check if exist in DB
+     * @return Boolean : true if value already exist, else false
+     */
     public boolean checkIfSubscriberExists(String key, String value)
     {
         try{
@@ -67,6 +76,11 @@ public class SubscriberDAO implements DAO {
         }
     }
 
+    /**
+     *
+     * @param username : String of user name to check if exists in DB and to return the id of him
+     * @return String id if the user name exist, else return null
+     */
     public String getIdByUsername(String username)
     {
         try{
@@ -89,7 +103,9 @@ public class SubscriberDAO implements DAO {
             return null;
         }
     }
-
+    /**
+     * Clear the collection in the DB
+     */
     public void clearCollection() {
         MongoCollection collection = database.getCollection("subscribers");
         collection.drop();
